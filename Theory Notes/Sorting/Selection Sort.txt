@@ -1,0 +1,135 @@
+Selection Sort
+
+Selection sort is a simple sorting algorithm.
+This algorithm will first find the smallest element in the array and swap it with the element in the first position, 
+then it will find the second smallest element and swap it with the element in the second position, and it will 
+keep on doing this until the entire array is sorted.
+It is called selection sort because it repeatedly selects the next-smallest element and swaps it into the right place.
+The average and worst-case complexity of selection sort is O(n2), where n is the number of items. 
+Due to this, it is not suitable for large data sets.
+
+
+Selection sort is generally used when -
+
+  -  A small array is to be sorted
+  -  Swapping cost doesn't matter
+  -  It is compulsory to check all elements
+
+
+working of Selection Sort - 
+
+    1. Starting from the first element, we search the smallest element in the array, and replace it with the element in the first position.
+    2. We then move on to the second position, and look for smallest element present in the subarray, starting from index 1, till the last index.
+    3. We replace the element at the second position in the original array, or we can say at the first position in the subarray, with the second smallest element.
+    4. This is repeated, until the array is completely sorted.
+
+
+Time complexity
+
+Selection Sort requires two nested for loops to complete itself, one for loop is in the function selectionSort, 
+and inside the first loop we are making a call to another function indexOfMinimum, which has the second(inner) for loop.
+
+
+    Case	            Time Complexity
+    Best Case               O(n2)
+    Average Case            O(n2)
+    Worst Case              O(n2)
+
+
+Best Case Complexity - It occurs when there is no sorting required, i.e. the array is already sorted. 
+The best-case time complexity of selection sort is O(n2).
+
+Average Case Complexity - It occurs when the array elements are in jumbled order that is not properly 
+ascending and not properly descending. The average case time complexity of selection sort is O(n2).
+
+Worst Case Complexity - It occurs when the array elements are required to be sorted in reverse order. 
+That means suppose you have to sort the array elements in ascending order, but its elements are in descending order. 
+The worst-case time complexity of selection sort is O(n2).
+
+
+
+Space Complexity
+
+
+Space Complexity        O(1)
+Stable                  YES
+
+The space complexity of selection sort is O(1). It is because, in selection sort, an extra variable is required for swapping.
+
+
+
+Selection Sort Code - 
+
+
+code 1 ;
+
+
+public class Main {
+    public static void main(String[] args) {
+      int arr[] = {7,8,3,1,2};
+      
+      // interation. selection sort. 
+      
+      for( int i =0 ; i<arr.length-1; i++){
+        int smallest = i; // index of smallest elements.
+        for(int j =i+1; j<arr.length; j++){ // starting value increacing. 
+        if(arr[smallest]>arr[j]){ // arr [smallest] if greater ho jata h agle 
+        //elements se to hum
+        // j ko smallest bana denge. 
+          smallest=j;  // j ko smallest bana denge. 
+        }
+          
+        }
+        int temp = arr[smallest];
+        arr[smallest]= arr[i];
+        arr[i]= temp;
+      }
+       for( int i =0 ; i<arr.length; i++){
+         System.out.print(arr[i]+" ");
+       }
+    }
+}
+
+
+
+code 2 ;
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      
+      Scanner sc = new Scanner(System.in);
+      int t = sc.nextInt();
+      int min; 
+      int temp =0;
+      int i,j,k,l;
+      for( i=0; i<t; i++){
+        int n = sc.nextInt();
+    int  a [] = new int[n];
+        for( j=0; j<n; j++){
+          a[j] = sc.nextInt();
+        }
+        for( k=0; k<a.length; k++){
+        min =k;
+        for( l=k+1; l<a.length; l++){
+          if(a[l] <a[min]){
+            min = l;
+          }
+        }
+        temp = a[k];
+        a[k]=a[min];
+        a[min] =temp;
+      
+      }
+        
+       for( j = 0; j<a.length; j++){
+          System.out.print(a[j]+" ");
+          
+        } 
+        System.out.println();
+      }
+        
+    }
+}

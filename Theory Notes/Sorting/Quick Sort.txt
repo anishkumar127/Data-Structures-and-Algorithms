@@ -1,0 +1,153 @@
+Quick Sort
+
+The algorithm was developed by a British computer scientist Tony Hoare in 1959. The name "Quick Sort" comes 
+from the fact that, quick sort is capable of sorting a list of data elements significantly faster (twice or thrice faster) 
+than any of the common sorting algorithms.
+Quick Sort is a Divide-and-Conquer Algorithm. What it means is, the given problem is divided into many sub-problems and 
+we solve the sub-problems to get the solution of the actual problem.
+It creates two empty arrays to hold elements less than the pivot value and elements greater than the pivot value, and 
+then recursively sort the sub arrays. There are two basic operations in the algorithm, swapping items in place and partitioning a section of the array.
+
+
+Quicksort algorithm is used when -
+
+  -  the programming language is good for recursion
+  -  time complexity matters
+  -  space complexity matters
+
+
+working Quick Sort - 
+
+Step 1 − Make any element as pivot
+Step 2 − Partition the array on the basis of pivot
+Step 3 − Apply quick sort on left partition recursively
+Step 4 − Apply quick sort on right partition recursively
+
+Algorithm - 
+
+Step 1 − Choose the highest index value has pivot
+Step 2 − Take two variables to point left and right of the list excluding pivot
+Step 3 − left points to the low index
+Step 4 − right points to the high
+Step 5 − while value at left is less than pivot move right
+Step 6 − while value at right is greater than pivot move left
+Step 7 − if both step 5 and step 6 does not match swap left and right
+Step 8 − if left ≥ right, the point where they met is new pivot
+
+
+
+Another Theory - 
+
+Quick sort is based on the divide-and-conquer approach based on the idea of choosing one element as a pivot 
+element and partitioning the array around it such that: Left side of pivot contains all the elements that are less 
+than the pivot element Right side contains all elements greater than the pivot
+
+It reduces the space complexity and removes the use of the auxiliary array that is used in merge sort. 
+Selecting a random pivot in an array results in an improved time complexity in most of the cases.
+
+
+
+Another Step Algorithm - 
+
+
+Step 1 - Consider the first element of the list as pivot (i.e., Element at first position in the list).
+Step 2 - Define two variables i and j. Set i and j to first and last elements of the list respectively.
+Step 3 - Increment i until list[i] > pivot then stop.
+Step 4 - Decrement j until list[j] < pivot then stop.
+Step 5 - If i < j then exchange list[i] and list[j].
+Step 6 - Repeat steps 3,4 & 5 until i > j.
+Step 7 - Exchange the pivot element with list[j] element.
+
+
+
+Time Complexity
+
+
+Best	     O(n*log n)
+Worst	     O(n^2)
+Average	     O(n*log n)
+
+
+Space Complexity	O(log n)
+Stability	        No
+
+
+Worst Case Complexity [Big-O]: O(n^2)
+It occurs when the pivot element picked is either the greatest or the smallest element.
+This condition leads to the case in which the pivot element lies in an extreme end of the sorted array. 
+One sub-array is always empty and another sub-array contains n - 1 elements. Thus, quicksort is called only on this sub-array.
+
+However, the quicksort algorithm has better performance for scattered pivots.
+
+Best Case Complexity [Big-omega]: O(n*log n)
+It occurs when the pivot element is always the middle element or near to the middle element.
+
+Average Case Complexity [Big-theta]: O(n*log n)
+It occurs when the above conditions do not occur.
+
+Space Complexity
+The space complexity for quicksort is O(log n). 
+
+
+
+
+Quick Sort Code  - 
+
+
+Code  1 ; 
+
+import java.util.*;
+//quick sort
+
+    public class Main {
+        public static void main(String[] args) {
+    int arr[] = {3,2,1,5,6,7};
+    int leng = arr.length;
+    Main qsm = new Main();
+    qsm.quickSortRecursion(arr,0,leng-1);
+    qsm.printArray(arr);
+        }
+        
+        int partition(int [] arr, int low, int high){
+        int pivot = arr[(low+high)/2];
+        while(low<=high){
+            while(arr[low]<pivot){
+            low++;
+            }
+            while(arr[high]>pivot){
+            high--;
+            }
+            if(low<=high){
+            int temp = arr[low];
+            arr[low]=arr[high];
+            arr[high]=temp;
+            low++;
+            high--;
+            }
+        }
+        return low;
+        }
+        void quickSortRecursion(int[] arr,int low,int high){
+        int pi=  partition(arr,low,high);
+        if(low<pi-1){
+        //left hand
+        quickSortRecursion(arr,low,pi-1);
+        }
+        if(pi<high){
+        // right hand
+        quickSortRecursion(arr,pi,high);
+        }
+        }
+        void printArray(int [] arr){
+        for(int i:arr){
+            System.out.print(i+" ");
+        }
+        
+        }
+    }
+
+
+
+
+
+Code 2 ;

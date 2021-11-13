@@ -1,0 +1,133 @@
+Bubble Sort Algorithm - 
+
+Definition-
+Bubble sort is a simple sorting algorithm.
+This sorting algorithm is comparison-based algorithm in which each pair of adjacent elements is compared and 
+the elements are swapped if they are not in order. it is primarily used as an educational
+tool because the performance of bubble sort is poor in the real world.
+This algorithm is not suitable for large data sets as
+its average and worst case complexity are of Ο(n^2) where n is the number of items.
+
+Bubble short is majorly used where -
+
+    - complexity does not matter
+    - simple and short code is preferred
+
+Implementing Bubble Sort Algorithm
+
+Starting with the first element(index = 0), compare the current element with the next element of the array.
+If the current element is greater than the next element of the array, swap them.
+If the current element is less than the next element, move to the next element. Repeat Step 1.
+after the first iteration, 6 [ largest elements ] is placed at the last index, which is the correct position for it.
+Similarly after the second iteration, 5 [ second largest elements ] will be at the second last index, and so on.
+
+Optimized Bubble sort Algorithm
+
+In the bubble sort algorithm, comparisons are made even when the array is already sorted. Because of that, the execution time increases.
+To solve it, we can use an extra variable swapped. It is set to true if swapping requires; otherwise, it is set to false.
+It will be helpful, as suppose after an iteration, if there is no swapping required, the value of variable swapped will be false.
+It means that the elements are already sorted, and no further iterations are required.
+This method will reduce the execution time and also optimizes the bubble sort.
+
+Time Complexity
+
+  Case            	Time Complexity
+
+Best Case	            O(n)
+Average Case        	O(n^2)
+Worst Case	            O(n^2)
+
+
+Best Case Complexity - It occurs when there is no sorting required, i.e. the array is already sorted.
+The best-case time complexity of bubble sort is O(n).
+
+Average Case Complexity - It occurs when the array elements are in jumbled order that is not properly 
+ascending and not properly descending. The average case time complexity of bubble sort is O(n2).
+
+Worst Case Complexity - It occurs when the array elements are required to be sorted in reverse order.
+That means suppose you have to sort the array elements in ascending order, but
+its elements are in descending order. The worst-case time complexity of bubble sort is O(n2).
+
+
+
+Space Complexity
+
+Space Complexity	O(1)
+Stable	            YES
+
+
+The space complexity of bubble sort is O(1). It is because, in bubble sort, an extra variable is required for swapping.
+The space complexity of optimized bubble sort is O(2). It is because two extra variables are required in optimized bubble sort.
+
+
+
+
+Bubble Sort Code - 
+
+code 1 ;
+
+public class Main {
+    public static void main(String[] args) {
+        int arr[]= {7,8,3,1,2 } ; 
+      // interaction 
+      for( int i = 0 ; i <arr.length-1; i++){ // i  only counter. actual position index is j. 
+        for( int j = 0 ; j<arr.length-i-1; j++){ // doing i-1 bcz last elements if sorted then don't compare. 
+        if(arr[j] > arr[j+1]){
+          // arr[i] ki value greater ho jati hai. eske i+1 yaani agle elements se.
+          // then we do swap. 
+          int temp = arr[j];
+          arr[j]= arr[j+1];
+          arr[j+1]= temp ;
+        }
+        }
+      }
+      for( int i =0; i<arr.length; i++){
+        System.out.print(arr[i]+" ");
+        
+      }
+    }
+}
+
+
+
+code 2 ;
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+  
+      Scanner sc=new Scanner(System.in);
+      int t = sc.nextInt();
+      for(int outer=0; outer<t; outer++){
+        int n = sc.nextInt();
+        int [] a =new int[n];
+        for(int inside=0; inside<n; inside++){
+          a[inside] = sc.nextInt();
+        }
+       int temp =0;
+  
+     for(int i=0; i<a.length; i++){
+       int  flag=0;
+         for(int j=0; j<a.length-1-i; j++){
+           
+           if(a[j]> a[j+1]){
+             
+             temp = a[j];
+             a[j] = a[j+1];
+             a[j+1] =temp;
+             flag=1;
+           }
+         }
+         if(flag==0){
+           break;   
+         }
+          }
+          for(int j=0; j<a.length; j++){
+            System.out.print(a[j]+" ");
+            }
+            System.out.println();
+      }
+    }
+}
