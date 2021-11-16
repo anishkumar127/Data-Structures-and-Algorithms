@@ -1,0 +1,49 @@
+Binary Search 
+Binary search is a fast search algorithm with run-time complexity of Ο(log n). This search algorithm works on the principle of divide and conquer. For this algorithm to work properly, the data collection should be in the sorted form.
+Advantages of Binary Search Algorithm
+Since it follows the technique to eliminate half of the array elements, it is more efficient as compared to linear search for large data.
+Better time complexity and thus takes less compilation time. 
+An improvement over linear search as it breaks the array down in half rather than sequentially traversing through the array elements.
+Limitations of Binary Search Algorithm
+Binary Search algorithm could only be implemented over a sorted array. 
+Small unsorted arrays would take considerate time in sorting and then searching the desired element. So, binary search is not preferred in such cases.
+It has poor locality of reference compared to linear search algorithm when comes to in-memory searching for short intervals.
+Applications of Binary Search
+This algorithm is used to search element in a given sorted array with more efficiency.
+It could also be used for few other additional operations like- to find the smallest element in the array or to find the largest element in the array.
+
+
+
+Binary Search Pseudocode
+We are given an input array that is supposed to be sorted in ascending order.
+We take two variables which will act as a pointer i.e, beg, and end.
+Beg will be assigned with 0 and the end will be assigned to the last index of the array.
+Now we will introduce another variable mid which will mark the middle of the current array. That will be computed as (low+high)/2.
+If the element present at the mid index is equal to the element to be searched, then just return the mid index.
+If the element to be searched is smaller than the element present at the mid index, move end to mid-1, and all RHS will get discarded.
+If the element to be searched is greater than the element present at the mid index, move beg to mid+1, and all LHS will get discarded.
+
+
+
+
+Binary Search Time Complexity
+In each iteration, the search space is getting divided by 2. That means that in the current iteration you have to deal with half of the previous iteration array.
+And the above steps continue till beg<end
+Best case could be the case where the first mid-value get matched to the element to be searched
+Best Time Complexity: O(1)
+Average Time Complexity: O(logn)
+Worst Time Complexity: O(logn)
+
+
+
+Binary Search Space Complexity
+No auxiliary space is required in Binary Search implementation
+
+The binary search algorithm’s space complexity depends on the way the algorithm has been implemented. Two ways in which it can be implemented are:
+
+Iterative method: In this method, the iterations are controlled through looping conditions. The space complexity of binary search in the iterative method is O(1).
+Recursive method: In this method, there is no loop, and the new values are passed to the next recursion of the loop. Here, the max and min values are used as the boundary condition. The space complexity of binary search in the recursive method is O(log n).
+
+
+
+

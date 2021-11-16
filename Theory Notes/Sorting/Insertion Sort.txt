@@ -1,0 +1,136 @@
+Insertion Sort
+
+
+Definition -
+This is an in-place comparison-based sorting algorithm.
+Insertion sort works similar to the sorting of playing cards in hands. It is assumed that the first card is
+already sorted in the card game, and then we select an unsorted card. If the selected unsorted card is greater 
+than the first card, it will be placed at the right side; otherwise, it will be placed at the left side. Similarly, 
+all unsorted cards are taken and put in their exact place.
+
+The same approach is applied in insertion sort. The idea behind the insertion sort is that first take one element, 
+iterate it through the sorted array. Although it is simple to use, it is not appropriate for large data sets as the 
+time complexity of insertion sort in the average case and worst case is O(n2), where n is the number of items. 
+Insertion sort is less efficient than the other sorting algorithms like heap sort, quick sort, merge sort, etc.
+
+
+Insertion sort has various advantages such as -
+
+    - Simple implementation
+    - Efficient for small data sets
+    - Adaptive, i.e., it is appropriate for data sets that are already substantially sorted.
+        
+
+working of Insertion Sort. 
+
+Step 1 - If the element is the first element, assume that it is already sorted. Return 1.
+
+Step 2 - Pick the next element, and store it separately in a key.
+
+Step 3 - Now, compare the key with all elements in the sorted array.
+
+Step 4 - If the element in the sorted array is smaller than the current element, then move to the next element. 
+         Else, shift greater elements in the array towards the right.
+
+Step 5 - Insert the value.
+
+Step 6 - Repeat until the array is sorted.
+
+
+
+Time Complexity
+
+
+    Case	            Time Complexity
+Best Case                   O(n)
+Average Case                O(n2)
+Worst Case                  O(n2)
+
+
+Best Case Complexity - It occurs when there is no sorting required, i.e. the array is already sorted. 
+The best-case time complexity of insertion sort is O(n).
+
+Average Case Complexity - It occurs when the array elements are in jumbled order that is not properly 
+ascending and not properly descending. The average case time complexity of insertion sort is O(n2).
+
+Worst Case Complexity - It occurs when the array elements are required to be sorted in reverse order. 
+That means suppose you have to sort the array elements in ascending order, but its elements are in descending order. 
+The worst-case time complexity of insertion sort is O(n2).
+
+
+
+Space Complexity
+
+Space Complexity        O(1)
+Stable                  YES
+
+The space complexity of insertion sort is O(1). It is because, in insertion sort, an extra variable is required for swapping.
+
+
+
+
+Insertion Sort Code - 
+
+code 1 ; 
+
+
+public class Main {
+    public static void main(String[] args) {
+       int arr[] = {7,8,3,1,2};
+       
+       for(int i=1; i<arr.length; i++){  // i start with 1. because we assume 1 is sorted part. 
+         int current = arr[i]; // pick up and push on right position. 
+         int j = i-1; // j using for sorted part track.
+        // pick up sorted part last elements// j-1;
+        // traversing sorted part. using j util j>=0; 
+         
+         while(j>=0 && current<arr[j]){
+           arr[j+1]= arr[j];
+           j--;
+         }
+         
+         // placement. 
+         arr[j+1]= current;
+       }
+       
+       for(int i =0; i<arr.length; i++){
+         System.out.print(arr[i]+" ");
+       }
+    }
+}
+
+
+
+
+code 2 ;
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      int [] a={5,1,6,2,4,3};
+      int temp ,j;
+      for(int i=1; i<a.length; i++){
+        temp = a[i];
+        j = i;
+        while(j>0 && a[j-1] > temp){
+          a[j] = a[j-1];
+          j=j-1;
+        }
+        a[j]=temp;
+      }
+      for(int k=0; k<a.length; k++){
+        System.out.print(a[k]+" ");
+      }
+      
+    }
+}
+
+
+
+
+
+
+
+

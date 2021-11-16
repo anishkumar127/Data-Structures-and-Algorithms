@@ -1,0 +1,143 @@
+Linear Search
+Linear search is a very simple search algorithm. In this type of search, a sequential search is made over all 
+items one by one. Every item is checked and if a match is found then that particular item is returned, 
+otherwise the search continues till the end of the data collection.
+
+another Theory 
+
+Linear search is also called as sequential search algorithm.It is the simplest searching algorithm. 
+In Linear search, we simply traverse the list completely and match each element of the list with the item whose 
+location is to be found. If the match is found, then the location of the item is returned; otherwise, the algorithm returns NULL.
+
+It is widely used to search an element from the unordered list, i.e., the list in which items are not sorted. 
+The worst-case time complexity of linear search is O(n).
+
+Linear search is a very basic and simple search algorithm. In Linear search, we search an element or value in a given array by traversing 
+the array from the starting, till the desired element or value is found.
+
+
+Implementation of Linear Search -
+
+       - First, we have to traverse the array elements using a for loop.
+       - In each iteration of for loop, compare the search element with the current array element, and -
+       - If the element matches, then return the index of the corresponding array element.
+       - If the element does not match, then move to the next element.
+       - If there is no match or the search element is not present in the given array, return -1.
+
+Algorithm - 
+
+Step 1 - Read the search element from the user.
+Step 2 - Compare the search element with the first element in the list.
+Step 3 - If both are matched, then display "Given element is found!!!" and terminate the function
+Step 4 - If both are not matched, then compare search element with the next element in the list.
+Step 5 - Repeat steps 3 and 4 until search element is compared with last element in the list.
+Step 6 - If last element in the list also doesn't match, then display "Element is not found!!!" and terminate the function.
+
+
+Features - 
+
+       - It is used for unsorted and unordered small list of elements.
+       - It has a time complexity of O(n), which means the time is linearly dependent on the number of elements, which is not bad, but not that good too.
+       - It has a very simple implementation.
+       - For searching operations in smaller arrays (<100 items).
+
+
+
+Time Complexity
+
+    Case	            Time Complexity
+  Best Case	                O(1)
+  Average Case	            O(n)
+  Worst Case	            O(n)
+
+Best Case Complexity - In Linear search, best case occurs when the element we are finding is at the first position of the array. 
+The best-case time complexity of linear search is O(1).
+
+Average Case Complexity - The average case time complexity of linear search is O(n).
+
+Worst Case Complexity - In Linear search, the worst case occurs when the element we are looking is present at the end of the array. 
+The worst-case in linear search could be when the target element is not present in the given array, and we have to traverse the entire array. 
+The worst-case time complexity of linear search is O(n).
+
+The time complexity of linear search is O(n) because every element in the array is compared only once.
+
+Space Complexity
+
+Space Complexity	O(1)
+The space complexity of linear search is O(1).
+
+
+
+Linear Search Code - 
+
+code 1 ; 
+
+// Array 
+
+public class Main {
+    public static void main(String[] args) {
+       int [] arr={5,3,6,1,4,2};
+       int item=1;
+       for(int i=0; i<arr.length; i++){
+         if(arr[i]== item){
+           System.out.print("item present, index position: "+i);
+         }
+       }
+    }
+}
+
+
+
+
+
+
+code 2 ;
+
+// Array 
+
+public class Main {
+    public static void main(String[] args) {
+       int [] arr={5,3,6,1,4,2};
+       int item=1;
+       int temp =0;
+       for(int i=0; i<arr.length; i++){
+         if(arr[i]== item){
+           System.out.print("item present, index position: "+i);
+           temp = temp+1;
+         }
+       }
+       if(temp ==0){
+         System.out.print("Item not found in list");
+       }
+    }
+}
+
+
+
+code 3 ; 
+
+// String 
+
+public class Main {
+    public static void main(String[] args) {
+      String [] arr={"anish","kumar","raj","bishnoi"};
+      
+      String item = "anish";
+      int temp =0;
+      for(int i=0; i<arr.length; i++){
+        // equals method. match 2 string.
+        if(arr[i].equals(item))
+        {
+          System.out.print("item present index position "+i);
+          temp +=1;
+        }
+      }
+     
+       if(temp ==0){
+         System.out.print("Item not found in list");
+       }
+    }
+}
+
+
+
