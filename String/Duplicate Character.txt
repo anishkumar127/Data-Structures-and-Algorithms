@@ -1,0 +1,44 @@
+import java.util.*;
+// duplicate string print.
+/*
+input:- text in use case
+output:- tes
+*/
+public class Main {
+    public static void main(String[] args) {
+      String name = "text in use case";
+      int count ; 
+     char chrArr[] = name.toCharArray();
+     for( int i =0; i<chrArr.length; i++){
+       count = 1;
+       for(int j=i+1; j<chrArr.length; j++){
+         if(chrArr[i]== chrArr[j] && chrArr[i] !=' '){
+           count ++;
+          chrArr[j]='0'; // for the not repeat the character again.
+         }
+       }
+       if(count>1 && chrArr[i] !='0'){
+         System.out.print(chrArr[i]); //output:- tes
+        // System.out.print(count); //output:- t2e3s2
+       }
+     }
+      
+    }
+}
+
+// dry run 
+
+/*
+name="go to gym";
+i =0
+j=i+1 
+ i = g 
+ j = o 
+ 
+ comparing.  
+ 
+ name[j] = '0' -> go to 0ym
+ // putting 0 when find duplicate and also counting this. 
+ 
+ //count>1 bcz find more then 1. not 0 then print the character;
+*/

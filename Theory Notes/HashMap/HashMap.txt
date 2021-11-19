@@ -1,0 +1,831 @@
+HashMap
+
+Defination - 
+
+Java HashMap class implements the Map interface which allows us to store key and value pair, where keys should be unique. If you try to insert the duplicate key,
+ it will replace the element of the corresponding key. It is easy to perform operations using the key index like updation, deletion, etc. HashMap class is found in the 
+ java.util package.
+
+HashMap in Java is like the legacy Hashtable class, but it is not synchronized. It allows us to store the null elements as well, but there should be only one null key. 
+Since Java 5, it is denoted as HashMap<K,V>, where K stands for key and V for value. It inherits the AbstractMap class and implements the Map interface.
+
+Points to remember - 
+
+      - Java HashMap contains values based on the key.
+      - Java HashMap contains only unique keys.
+      - Java HashMap may have one null key and multiple null values.
+      - Java HashMap is non synchronized.
+      - Java HashMap maintains no order.
+      - The initial default capacity of Java HashMap class is 16 with a load factor of 0.75.
+
+
+
+
+
+HashMap contains an array of the nodes, and the node is represented as a class. It uses an array and LinkedList data structure internally for storing Key and Value. 
+There are four fields in HashMap.
+
+Representation of a Node - 
+        Node<K,V>
+        int hash
+        K Key
+        V Value
+        Node<K,V> next
+
+
+- hashCode()  and equals() method in HashMap 
+
+        - equals(): It checks the equality of two objects. It compares the Key, whether they are equal or not. It is a method of the Object class. It can be overridden. 
+                    If you override the equals() method, then it is mandatory to override the hashCode() method.
+
+        - hashCode(): This is the method of the object class. It returns the memory reference of the object in integer form. The value received from the method is used as 
+                      the bucket number. The bucket number is the address of the element inside the map. Hash code of null Key is 0.
+
+        - Buckets: Array of the node is called buckets. Each node has a data structure like a LinkedList. More than one node can share the same bucket. It may be different 
+                   in capacity.
+
+
+
+working of a HashMap - 
+
+        Insert Key, Value pair in HashMap -
+
+        We use put() method to insert the Key and Value pair in the HashMap. The default size of HashMap is 16 (0 to 15).
+
+Example :- 
+
+        HashMap<String, Integer> map = new HashMap<>();  
+        map.put("Anish", 19);  
+        map.put("Kumar", 29);  
+        map.put("Bishnoi", 39); 
+
+        When we call the put() method, then it calculates the hash code of the Key "Anish." Suppose the hash code of "Anish" is 2657860. To store the Key in memory, 
+        we have to calculate the index.
+       
+        Calculating Index -
+
+        Index minimizes the size of the array. The Formula for calculating the index is:
+
+        Index = hashcode(Key) & (n-1)  
+        Where n is the size of the array. Hence the index value for "Aman" is:
+        
+        Index = 2657860 & (16-1) = 4  
+
+        The value 4 is the computed index value where the Key and value will store in HashMap.
+
+                        0 1 3 4 5 6 7 8 9 10 11 12 13 14 15 
+
+                              |
+                            2657860
+                             Anish
+                              19 
+                              next
+
+       Hash Collision -
+
+       This is the case when the calculated index value is the same for two or more Keys. Let's calculate the hash code for another Key "Kumar." Suppose the hash code for "Kumar" 
+       is 63281940. To store the Key in the memory, we have to calculate index by using the index formula.
+
+       Index=63281940 & (16-1) = 4  
+
+       The value 4 is the computed index value where the Key will be stored in HashMap. In this case, equals() method check that both Keys are equal or not. If Keys are same, 
+       replace the value with the current value. Otherwise, connect this node object to the existing node object through the LinkedList. Hence both Keys will be stored at index 4.
+
+                          0 1 3 4 5 6 7 8 9 10 11 12 13 14 15 
+                                |
+                                2657860
+                                Anish
+                                19 
+                                next  ->    63281940
+                                             Kumar
+                                             29
+                                             null
+
+
+      get() method in HashMap -
+
+      get() method is used to get the value by its Key. It will not fetch the value if you don't know the Key. When get(K Key) method is called, it calculates the hash code of 
+      the Key.
+
+      Suppose we have to fetch the Key "Anish." The following method will be called.
+      
+      map.get(new Key("Anish"));  
+      It generates the hash code as 2657860. Now calculate the index value of 2657860 by using index formula. The index value will be 4, as we have calculated above. 
+      get() method search for the index value 4. It compares the first element Key with the given Key. If both keys are equal, then it returns the value else check for the next 
+      element in the node if it exists. In our scenario, it is found as the first element of the node and return the value 19.
+      
+      Let's fetch another Key "Kumar."
+      
+      The hash code of the Key "Kumar" is 63281940. The calculated index value of 63281940 is 4, as we have calculated for put() method. Go to index 4 of the array and compare 
+      the first element's Key with the given Key. It also compares Keys. In our scenario, the given Key is the second element, and the next of the node is null. It compares the 
+      second element Key with the specified Key and returns the value 29. It returns null if the next of the node is null.
+
+
+
+
+Java LinkedHashMap class -
+
+Java LinkedHashMap class is Hashtable and Linked list implementation of the Map interface, with predictable iteration order. It inherits HashMap class and implements the Map interface.
+
+Points to remember :-
+
+       - Java LinkedHashMap contains values based on the key.
+       - Java LinkedHashMap contains unique elements.
+       - Java LinkedHashMap may have one null key and multiple null values.
+       - Java LinkedHashMap is non synchronized.
+       - Java LinkedHashMap maintains insertion order.
+       - The initial default capacity of Java HashMap class is 16 with a load factor of 0.75.
+
+LinkedHashMap class declaration -
+
+       public class LinkedHashMap<K,V> extends HashMap<K,V> implements Map<K,V>  
+
+LinkedHashMap class Parameters :-
+       Let's see the Parameters for java.util.LinkedHashMap class.
+       
+           - K: It is the type of keys maintained by this map.
+           - V: It is the type of mapped values
+
+
+           Constructors of Java LinkedHashMap class -
+
+           Constructor                                                                                  	Description
+
+           LinkedHashMap()                                                      	    It is used to construct a default LinkedHashMap.
+           LinkedHashMap(int capacity)                                  	        It is used to initialize a LinkedHashMap with the given capacity.
+           LinkedHashMap(int capacity, float loadFactor)	                             It is used to initialize both the capacity and the load factor.
+           LinkedHashMap(int capacity, float loadFactor, boolean accessOrder)	        It is used to initialize both the capacity and the load factor with specified ordering mode.
+           LinkedHashMap(Map<? extends K,? extends V> m)                    	    It is used to initialize the LinkedHashMap with the elements from the given Map class m.
+
+
+Load Factor in HashMap :-
+
+
+           The HashMap is one of the high-performance data structure in the Java collections framework. It gives a constant time performance for insertion and retrieval. 
+           There are two factors which affect the performance of the hashmap.
+
+Initial Capacity :-
+           Load Factor:- 
+           We have to choose these two factors very carefully while creating the HashMap object. Load Factor and initial capacity can be configured while we create a constructor 
+           of HashMap class.
+
+        example:- HashMap hm=new HashMap(int initialCapacity, float loadFactor);  
+
+Initial Capacity of HashMap -
+   
+        The initial capacity of the HashMap is the number of buckets in the hash table. It creates when we create the object of HashMap class. The initial capacity of the HashMap is
+        24, i.e., 16. The capacity of the HashMap is doubled each time it reaches the threshold. The capacity is increased to 25=32, 26=64, and so on.
+
+        Suppose we have implemented the hashCode() method, which makes sure that key-value pair will be distributed among 16 buckets equally.
+
+        Consider the following scenarios:
+        
+                - If there are 16 elements in the HashMap, the hashCode() method will distribute one element in each bucket. The searching for any item, in this case, will take the 
+                  only lookup.
+                - If there are 32 elements in the HashMap, the hashCode() method will distribute two elements in each bucket. The searching for any item, in this case, will take 
+                  the maximum of two lookups.
+                - Similarly, if there are 128 elements in HashMap, the hashCode() method will distribute eight elements in each bucket. The searching for any item, in this case, 
+                  will take the maximum eight lookups.
+       
+                We can observe from the above scenarios that the number of items in HashMap is doubled. The maximum lookup time in each bucket is not increasing very high and remain 
+                almost constant.
+        
+        Alternatively, the hashmap grows in the power of 2n and keep on growing when starting point it reached its limit.
+
+
+Load Factor -
+
+        The Load factor is a measure that decides when to increase the HashMap capacity to maintain the get() and put() operation complexity of O(1). The default load factor of 
+        HashMap is 0.75f (75% of the map size).
+
+Problem:-
+
+The problem is, keeping the bucket size fixed (i.e., 16), we keep on increasing the total number of items in the map that disturbs time complexity.
+
+Solution:-
+
+When we increase the total number of buckets, total items in each bucket starts increasing. Now we are able to keep the constant number of items in each bucket and maintain the 
+time complexity of O(1) for get() and put() operation.
+
+How Load Factor is calculated -
+
+Load Factor decides "when to increase the number of buckets."
+
+We can find when to increase the hashmap size by using the following formula:
+
+example:- initial capacity of the hashmap*Load factor of the hashmap.  
+
+The initial capacity of hashmap is=16
+The default load factor of hashmap=0.75
+According to the formula as mentioned above: 16*0.75=12
+
+It represents that 12th key-value pair of hashmap will keep its size to 16. As soon as 13th element (key-value pair) will come into the Hashmap, it will increase its size from 
+default 24 = 16 buckets to 25 = 32 buckets.
+
+Another way to calculate size:-
+
+When the load factor ratio (m/n) reaches 0.75 at that time, hashmap increases its capacity.
+
+Where,
+
+     - m is the number of entries in a hashmap.
+     - n is the total size of hashmap.
+
+
+     Example of Load Factor -
+
+     We know that the default bucket size of the hashmap is 16. We insert the first element, now check that we need to increase the hashmap capacity or not. It can be determined 
+     by the formula:
+
+     Size of hashmap (m)/number of buckets (n)  
+     In this case, the size of the hashmap is 1, and the bucket size is 16. So, 1/16=0.0625. Now compare this value with the default load factor.
+     
+                         0.0625<0.75
+     
+     So, no need to increase the hashmap size.
+     
+     We do not need to increase the size of hashmap up to 12th element, because
+     
+                         12/16=0.75
+     
+     This load factor is equal to the default load factor, i.e., 0.75.
+     
+     As soon as we insert the 13th element in the hashmap, the size of hashmap is increased because:
+     
+                         13/16=0.8125
+     
+     Which is greater than the default hashmap size.
+     
+                         0.8125>0.75
+     
+     Now we need to increase the hashmap size.
+     
+     If you want to keep get and put complexity O(1), it is advisable to have a load factor around 0.75.
+
+
+Methods of HashMap -
+                    Method	                                                Description
+
+                    clear()                                       	removes all mappings from the HashMap
+                    compute()	                                    computes a new value for the specified key
+                    computeIfAbsent()                               computes value if a mapping for the key is not present
+                    computeIfPresent()                             	computes a value for mapping if the key is present
+                    merge()	                                        merges the specified mapping to the HashMap
+                    clone()                                       	makes the copy of the HashMap
+                    containsKey()                                  	checks if the specified key is present in Hashmap
+                    containsValue()                             	checks if Hashmap contains the specified value
+                    size()                                        	returns the number of items in HashMap
+                    isEmpty()	                                    checks if the Hashmap is empty
+
+
+
+How to Sort HashMap in Java - 
+
+Java HashMap does not preserve any order by default. If there is a need to sort HashMap we sort it explicitly based on the requirements. Java provides an option to sort HashMap 
+based on keys and values.
+
+       - Sort HashMap by Keys
+       - Sort HashMap by Values
+
+       
+       Sort HashMap by Keys -
+
+       By using TreeMap
+       By using LinkedHashMap
+       
+TreeMap - 
+       1. we use TreeMap constructor to sort the elements and pass the object of HashMap class as an argument. This is the simplest way to sort HashMap by Keys.
+
+       1. As we know, keys in TreeMap are sorted using their natural order. This is a good solution when we want to sort the key-value pairs by their key. So the idea is to push 
+          all the data from our HashMap into the TreeMap.
+
+LinkedHashMap  -   
+                 When we use LinkedHashMap, then we need to get Key set. Convert the Set into List, sort the list and then add the sorted list into LinkedHashMap in the same order. 
+                 The same process we have done in the example Sort HashMap by Value.
+
+Sort HashMap by Values using Comparator Interface -
+
+       In Java, sorting HashMap by values is complicated because there is no direct method is available. To sort the HashMap by values, we need to create a Comparator. It 
+       compares two elements based on the values.
+
+       After that get the Set of elements from the Map and convert Set into the List. Use the Collections.sort(List) method to sort the list of elements by values by passing 
+       customized comparator. Now create a new LinkedHashMap and copy the sorted elements into that. Since LinkedHashMap guarantees the insertion order of mappings. We get a HashMap whose values are in sorted order.
+       
+       There is a slight difference between sorting HashMap by Keys and Values is that it can have duplicate values but not duplicate Keys. We cannot use TreeMap to sort 
+       values because TreeMap sorts elements by Keys.
+       
+
+Sort HashMap using LinkedHashMap -
+
+Notes :- 
+
+    A HashMap can be sorted by its keys or its values. However, a problem that HashMap has is that its iteration order, when considering a sorted data structure, is not preserved. 
+    This makes it difficult to display sorted data.
+
+One solution to this problem is to use the LinkedHashMap class in Java; this class maintains the iteration order. In fact, any other class will work as well, provided that it 
+keeps the iteration order the same.
+
+Since a LinkedHashMap keeps key-value pairs in the insertion order, the following will be our procedure to get a sorted LinkedHashMap:
+
+
+    code 1 ;
+
+    
+    import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class HashMapSorting {
+  HashMap<String, Integer> map;
+  LinkedHashMap<String, Integer> linkedMap;
+  ArrayList<Map.Entry<String, Integer>> arr;
+
+	public void sort() {				
+    for(Map.Entry<String, Integer> e: map.entrySet()) {
+			arr.add(e);
+		}
+
+		Comparator<Map.Entry<String, Integer>> valueComparator = new Comparator<Map.Entry<String, Integer>>() {
+            
+            @Override
+            public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
+                Integer v1 = e1.getValue();
+                Integer v2 = e2.getValue();
+                return v1.compareTo(v2);
+            }
+    };
+
+		Collections.sort(arr, valueComparator);
+
+		for(Map.Entry<String, Integer> e: arr) {
+			linkedMap.put(e.getKey(), e.getValue());
+			System.out.println("KEY: "+e.getKey()+" "+"VALUE: "+e.getValue());
+			
+		}
+	}
+
+  HashMapSorting(){
+    map = new HashMap<>();
+
+    map.put("a", 10);
+		map.put("b", 30);
+		map.put("c", 20);
+		map.put("d", 5);
+		map.put("e", 40);
+
+    linkedMap = new LinkedHashMap<>();
+    arr = new ArrayList<>();
+  }
+
+  public static void main(String[] args) {
+		HashMapSorting m = new HashMapSorting();
+		m.sort();
+	}
+}
+
+
+
+
+
+
+code 2 ; 
+
+
+import java.util.Collections;  
+import java.util.Comparator;  
+import java.util.HashMap;  
+import java.util.Iterator;  
+import java.util.LinkedHashMap;  
+import java.util.LinkedList;  
+import java.util.List;  
+import java.util.Map;  
+import java.util.Set;  
+public class SortHashMapValue   
+{  
+public static void main(String[] args)   
+{  
+//implementing HashMap  
+HashMap<Integer, String> hm = new HashMap<Integer, String>();  
+hm.put(6, "A");  
+hm.put(12, "B");  
+hm.put(5, "C");  
+hm.put(78, "D");  
+hm.put(10, "E");  
+hm.put(67, "F");  
+hm.put(1, "G");  
+System.out.println("Before Sorting:");  
+Set set = hm.entrySet();  
+Iterator iterator = set.iterator();  
+while(iterator.hasNext())   
+{  
+Map.Entry map = (Map.Entry)iterator.next();  
+System.out.println("Roll no:  "+map.getKey()+"     Name:   "+map.getValue());  
+}  
+Map<Integer, String> map = sortValues(hm);   
+System.out.println("\n");  
+
+System.out.println("After Sorting:");  
+Set set2 = map.entrySet();  
+Iterator iterator2 = set2.iterator();  
+while(iterator2.hasNext())   
+{  
+Map.Entry me2 = (Map.Entry)iterator2.next();  
+System.out.println("Roll no:  "+me2.getKey()+"     Name:   "+me2.getValue());  
+}  
+}  
+//method to sort values  
+private static HashMap sortValues(HashMap map)   
+{   
+List list = new LinkedList(map.entrySet());  
+//Custom Comparator  
+Collections.sort(list, new Comparator()   
+{  
+public int compare(Object o1, Object o2)   
+{  
+return ((Comparable) ((Map.Entry) (o1)).getValue()).compareTo(((Map.Entry) (o2)).getValue());  
+}  
+});  
+//copying the sorted list in HashMap to preserve the iteration order  
+HashMap sortedHashMap = new LinkedHashMap();  
+for (Iterator it = list.iterator(); it.hasNext();)   
+{  
+ Map.Entry entry = (Map.Entry) it.next();  
+sortedHashMap.put(entry.getKey(), entry.getValue());  
+}   
+return sortedHashMap;  
+}  
+}  
+
+
+
+
+
+code 3 ; 
+
+
+
+// Simple Example
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+ 
+ 
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map = new HashMap<>();
+        LinkedHashMap<String, String> sortedMap = new LinkedHashMap<>();
+        ArrayList<String> list = new ArrayList<>();
+        map.put("2", "B");
+        map.put("8", "A");
+        map.put("4", "D");
+        map.put("7", "F");
+        map.put("6", "W");
+        map.put("19", "J");
+        map.put("1", "Z");
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            list.add(entry.getValue());
+        }
+        Collections.sort(list, new Comparator<String>() {
+            public int compare(String str, String str1) {
+                return (str).compareTo(str1);
+            }
+        });
+        for (String str : list) {
+            for (Entry<String, String> entry : map.entrySet()) {
+                if (entry.getValue().equals(str)) {
+                    sortedMap.put(entry.getKey(), str);
+                }
+            }
+        }
+        System.out.println(sortedMap);
+        // output:- {8=A, 2=B, 4=D, 7=F, 19=J, 6=W, 1=Z}
+    }
+}
+
+
+
+
+code 4; 
+
+
+// Integer value sorted in hash map. 
+ 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+ 
+ 
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>();
+        LinkedHashMap<String, Integer> sortedMap = new LinkedHashMap<>();
+        ArrayList<Integer> list = new ArrayList<>();
+        map.put("A", 5);
+        map.put("B", 7);
+        map.put("C", 3);
+        map.put("D", 1);
+        map.put("E", 2);
+        map.put("F", 8);
+        map.put("G", 4);
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            list.add(entry.getValue());
+        }
+        Collections.sort(list); 
+        for (int num : list) {
+            for (Entry<String, Integer> entry : map.entrySet()) {
+                if (entry.getValue().equals(num)) {
+                    sortedMap.put(entry.getKey(), num);
+                }
+            }
+        }
+        System.out.println(sortedMap);
+        // output:- {D=1, E=2, C=3, G=4, A=5, B=7, F=8}
+    }
+}
+
+
+
+
+
+
+code 5; 
+
+
+// sorting by value. string. 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class HMapSortingByvalues {
+  public static void main(String[] args) {
+      HashMap<Integer, String> hmap = new HashMap<Integer, String>();
+      hmap.put(5, "A");
+      hmap.put(11, "C");
+      hmap.put(4, "Z");
+      hmap.put(77, "Y");
+      hmap.put(9, "P");
+      hmap.put(66, "Q");
+      hmap.put(0, "R");
+      System.out.println("Before Sorting:");
+      Set set = hmap.entrySet();
+      Iterator iterator = set.iterator();
+      while(iterator.hasNext()) {
+           Map.Entry me = (Map.Entry)iterator.next();
+           System.out.print(me.getKey() + ": ");
+           System.out.println(me.getValue());
+      }
+      Map<Integer, String> map = sortByValues(hmap); 
+      System.out.println("After Sorting:");
+      Set set2 = map.entrySet();
+      Iterator iterator2 = set2.iterator();
+      while(iterator2.hasNext()) {
+           Map.Entry me2 = (Map.Entry)iterator2.next();
+           System.out.print(me2.getKey() + ": ");
+           System.out.println(me2.getValue());
+      }
+  }
+
+  private static HashMap sortByValues(HashMap map) { 
+       List list = new LinkedList(map.entrySet());
+       // Defined Custom Comparator here
+       Collections.sort(list, new Comparator() {
+            public int compare(Object o1, Object o2) {
+               return ((Comparable) ((Map.Entry) (o1)).getValue())
+                  .compareTo(((Map.Entry) (o2)).getValue());
+            }
+       });
+
+       // Here I am copying the sorted list in HashMap
+       // using LinkedHashMap to preserve the insertion order
+       HashMap sortedHashMap = new LinkedHashMap();
+       for (Iterator it = list.iterator(); it.hasNext();) {
+              Map.Entry entry = (Map.Entry) it.next();
+              sortedHashMap.put(entry.getKey(), entry.getValue());
+       } 
+       return sortedHashMap;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+code hashmap sort by key 1;
+
+
+// hash map sort by key. 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.Set;
+import java.util.Iterator;
+
+public class Details {
+
+    public static void main(String[] args) {
+
+         HashMap<Integer, String> hmap = new HashMap<Integer, String>();
+         hmap.put(5, "A");
+         hmap.put(11, "C");
+         hmap.put(4, "Z");
+         hmap.put(77, "Y");
+         hmap.put(9, "P");
+         hmap.put(66, "Q");
+         hmap.put(0, "R");
+
+         System.out.println("Before Sorting:");
+         Set set = hmap.entrySet();
+         Iterator iterator = set.iterator();
+         while(iterator.hasNext()) {
+               Map.Entry me = (Map.Entry)iterator.next();
+               System.out.print(me.getKey() + ": ");
+               System.out.println(me.getValue());
+         }
+         Map<Integer, String> map = new TreeMap<Integer, String>(hmap); 
+         System.out.println("After Sorting:");
+         Set set2 = map.entrySet();
+         Iterator iterator2 = set2.iterator();
+         while(iterator2.hasNext()) {
+              Map.Entry me2 = (Map.Entry)iterator2.next();
+              System.out.print(me2.getKey() + ": ");
+              System.out.println(me2.getValue());
+         }
+    }
+}
+
+
+Hashmap Key Sorting. 2; 
+
+// soting the HashMap map by key , TreeMap & java8 stream.
+// assceding orderr dessceding order. 
+// using streams java 8. 
+// reverse order. 
+/*
+output:-
+Sorting using TreeMap
+
+Unsorted Map : {alex=1, charles=4, david=2, brian=5, elle=3}
+Sorted Map   : {alex=1, brian=5, charles=4, david=2, elle=3}
+Reverse Sorted Map   : {elle=3, david=2, charles=4, brian=5, alex=1}
+
+Sorting using Java8 streams
+
+Unsorted Map : {alex=1, charles=4, david=2, brian=5, elle=3}
+Sorted Map   : {alex=1, brian=5, charles=4, david=2, elle=3}
+Reverse Sorted Map   : {elle=3, david=2, charles=4, brian=5, alex=1}
+
+*/
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.TreeMap;
+ 
+public class MapSortingExamples {
+ 
+    public static void main(String[] args) {
+         
+        System.out.println("Sorting using TreeMap\n");
+         
+        sortByKeyUsingTreeMap();
+ 
+        System.out.println("\nSorting using Java8 streams\n");
+         
+        sortByKeyJava8Stream();
+    }
+ 
+    private static void sortByKeyUsingTreeMap() 
+    {
+        Map<String, Integer> unSortedMap = getUnSortedMap();
+         
+        System.out.println("Unsorted Map : " + unSortedMap);
+ 
+        Map<String, Integer> sortedMap = new TreeMap<String, Integer>(unSortedMap);
+         
+        System.out.println("Sorted Map   : " + sortedMap);
+         
+        Map<String, Integer> reverseSortedMap = new TreeMap<String, Integer>(Collections.reverseOrder());
+        reverseSortedMap.putAll(unSortedMap);
+         
+        System.out.println("Reverse Sorted Map   : " + reverseSortedMap);
+    }
+ 
+    private static void sortByKeyJava8Stream() 
+    {
+        Map<String, Integer> unSortedMap = getUnSortedMap();
+         
+        System.out.println("Unsorted Map : " + unSortedMap);
+ 
+        LinkedHashMap<String, Integer> sortedMap = new LinkedHashMap<>();
+        unSortedMap.entrySet().stream().sorted(Map.Entry.comparingByKey())
+                .forEachOrdered(x -> sortedMap.put(x.getKey(), x.getValue()));
+         
+        System.out.println("Sorted Map   : " + sortedMap);
+         
+        LinkedHashMap<String, Integer> reverseSortedMap = new LinkedHashMap<>();
+        unSortedMap.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
+                .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
+         
+        System.out.println("Reverse Sorted Map   : " + reverseSortedMap);
+    }
+ 
+    private static Map<String, Integer> getUnSortedMap() 
+    {
+        Map<String, Integer> unsortMap = new HashMap<>();
+        unsortMap.put("alex", 1);
+        unsortMap.put("david", 2);
+        unsortMap.put("elle", 3);
+        unsortMap.put("charles", 4);
+        unsortMap.put("brian", 5);
+        return unsortMap;
+    }
+}
+
+
+
+
+
+
+HashMap Sorting by Key. 3; TreeMap -  
+
+
+// TreeMap collection. sorting hashmap by key. 
+
+/*
+Output:
+
+Before Sorting:
+33: Z
+99: I
+22: A
+55: B
+88: X
+44: M
+After Sorting:
+22: A
+33: Z
+44: M
+55: B
+88: X
+99: I
+*/
+import java.util.*;
+
+ public class HashMapSortByKeyExample {
+    public static void main(String args[]) {
+        
+    // Creating a HashMap of int keys and String values
+    HashMap<Integer, String> hashmap = new HashMap<Integer, String>();
+ 
+    // Adding Key and Value pairs to HashMap
+    hashmap.put(22,"A");
+    hashmap.put(55,"B");
+    hashmap.put(33,"Z");
+    hashmap.put(44,"M");
+    hashmap.put(99,"I");
+    hashmap.put(88,"X");
+ 
+    System.out.println("Before Sorting:");
+    Set set = hashmap.entrySet();
+    Iterator iterator = set.iterator();
+    while(iterator.hasNext()) {
+        Map.Entry pair = (Map.Entry)iterator.next();
+        System.out.print(pair.getKey() + ": ");
+        System.out.println(pair.getValue());
+    }
+    Map<Integer, String> map = new TreeMap<Integer, String>(hashmap);     System.out.println("After Sorting:");
+    Set set2 = map.entrySet();
+    Iterator iterator2 = set2.iterator();
+    while(iterator2.hasNext()) {
+        Map.Entry pair = (Map.Entry)iterator2.next();
+        System.out.print(pair.getKey() + ": ");
+        System.out.println(pair.getValue());
+    } 
+  }
+}
+
+
+

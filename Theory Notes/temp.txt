@@ -1,0 +1,32 @@
+Input
+7
+100 80 60 70 60 75 85
+
+Output
+1 1 1 2 1 4 6
+
+Input
+6
+10 4 5 90 120 80
+
+Output
+1 1 2 4 5 1
+
+100 80 60  , 70, 60, 75 85
+0 day currD  <= 1 CD(currD);   1  100
+1 day currD <=  1 CD(currD);   1  80   100<80>
+2 day currD <=  1 CD(currD);   1   60   80<60>
+3 day  last 2 CD <=  to currD  i.e. (60, 70). count 2; 70>60  2; 
+4 day currD  <= 1 CD(currD);   1;  60   60<70>
+5 day  last 4 CD <=  to currD  i.e. (60,70,60,75)  count 4; 75  75>60; 4
+6 day  last 6 CD <= to currD    i.e. (80,60,70,60,75,85) count 6;  85 85>75  6
+
+Explanation:
+Test case 1: 
+On 0th day only the current day where we find that stock price is less than or equal to it so for 1 consecutive day(current day) this happens.
+On 1st day only the current day where we find that stock price is less than or equal to it so for 1 consecutive day(current day) this happens.
+On 2nd day only the current day where we find that stock price is less than or equal to it so for 1 consecutive day(current day) this happens.
+Now on 3rd day we observe that stock price for last two consecutive days is less than or equal to current day i.e. (60, 70) thus count is 2 
+On 4th day only the current day where we find that stock price is less than or equal to it so for 1 consecutive day(current day) this happens.
+On 5th day we observe that stock price for last four consecutive days is less than or equal to current day i.e. (60, 70, 60, 75) thus count is 4.
+On 6th day we observe that stock price for last six consecutive days is less than or equal to current day i.e. (80, 60, 70, 60, 75, 85) thus count is 6.

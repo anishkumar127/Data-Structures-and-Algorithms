@@ -1,0 +1,118 @@
+Difference between HashMap and Hashtable
+
+HashMap and Hashtable both are used to store data in key and value form. Both are using hashing technique to store unique keys.
+
+what is Hashmap - 
+
+                    HashMap is a Map implementation based on a hash table which provides constant-time performance for inserting and locating pairs. The HashMap class provides a 
+                    map implementation that is based on a Hashtable data structure. This implementation supports all Map operations and allows multiple null values but only one 
+                    null key. It uses key/value pairs to store values in a hash table. It is an unsynchronized Map which means it is not thread-safe and cannot be shared between 
+                    multiple threads without proper synchronization.
+
+
+what is hashtable - 
+
+                    Unlike HashMap, Hashtable is a synchronized Map and it is thread-safe which means it can be shared between multiple threads. In Hashtable, you specify an object 
+                    that can be used as a key and the value that goes with the key. A Hashtable maps keys to values with the help of a hash function. Java provides this function in 
+                    the form of Object’s hashcode( ) method, which classes override to provide appropriate hash codes. Unlike HashMap, Hashtable does not support null values and null 
+                    keys because there is null check in the put method implementation of Hashtable.
+
+
+Summary of HashMap Vs. Hashtable - 
+
+The HashMap class gives you an unsorted, unordered Map. So when you need a Map and you don’t care about the order in which the entries are stored, then HashMap is the way to go.
+
+Hashtable, just like Vector, has been in from prehistoric Java times. Just like Vector is a synchronized counterpart to the more modern and advanced ArrayList, Hashtable is the 
+synchronized counterpart to HashMap. However, a class cannot be synchronized, so when we say that Hashtable is a synchronized Map, it means that the key methods of the class are 
+synchronized. 
+
+While both are virtually identical, the difference lies in the way they are synchronized and how they perform. HashMap performs better in a multi threaded environment whereas 
+Hashtable performs better in a single threaded environment.
+
+
+Difference - 
+
+HashMap - 
+
+1. HashMap is non synchronized. It is not-thread safe and can't be shared between many threads without proper synchronization code.
+2. HashMap allows one null key and multiple null values.	
+3. HashMap is a new class introduced in JDK 1.2.	
+4. HashMap is fast.	
+5. We can make the HashMap as synchronized by calling this code Map m = Collections.synchronizedMap(hashMap);
+6. HashMap is traversed by Iterator.	
+7. Iterator in HashMap is fail-fast.	
+8. HashMap inherits AbstractMap class.	
+
+
+HashTable - 
+
+1. Hashtable is synchronized. It is thread-safe and can be shared with many threads.
+
+2. Hashtable doesn't allow any null key or value.
+
+3. Hashtable is a legacy class.
+
+4. Hashtable is slow.
+
+5. Hashtable is internally synchronized and can't be unsynchronized.
+
+6. Hashtable is traversed by Enumerator and Iterator.
+
+7. Enumerator in Hashtable is not fail-fast.
+
+8. Hashtable inherits Dictionary class.
+
+
+
+
+code Example both - 
+
+// A sample Java program to demonstrate
+// HashMap and HashTable
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+// Name of the class has to be "Main"
+// only if the class is public
+class Ideone
+{
+	public static void main(String args[])
+	{
+		//----------hashtable -------------------------
+		Hashtable<Integer,String> ht=new Hashtable<Integer,String>();
+		ht.put(101," ajay");
+		ht.put(101,"Vijay");
+		ht.put(102,"Ravi");
+		ht.put(103,"Rahul");
+		System.out.println("-------------Hash table--------------");
+		for (Map.Entry m:ht.entrySet()) {
+			System.out.println(m.getKey()+" "+m.getValue());
+		}
+
+		//----------------hashmap--------------------------------
+		HashMap<Integer,String> hm=new HashMap<Integer,String>();
+		hm.put(100,"Amit");
+		hm.put(104,"Amit");
+		hm.put(101,"Vijay");
+		hm.put(102,"Rahul");
+		System.out.println("-----------Hash map-----------");
+		for (Map.Entry m:hm.entrySet()) {
+			System.out.println(m.getKey()+" "+m.getValue());
+		}
+	}
+}
+
+
+output:- 
+
+-------------Hash table--------------
+103 Rahul
+102 Ravi
+101 Vijay
+-----------Hash map-----------
+100 Amit
+101 Vijay
+102 Rahul
+104 Amit
+
