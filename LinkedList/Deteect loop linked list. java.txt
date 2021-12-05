@@ -1,0 +1,33 @@
+import java.util.Date;
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        
+    }
+    
+    // detect cylcle get 
+    Node detectCycle(Node head){
+      Node slow = head;
+      Node fast = head;
+      while(fast!=null && fast.next!=null){
+        slow = slow.next;
+        fast = fast.next.next;
+        if(slow==fast){
+          return slow;
+        }
+      }
+      return null ;
+    }
+    
+    // detect first NOde where cycle start 
+    
+    Node detectFirsNode(Node head){
+      Node meet = detectCycle(head);
+      NOde start = head;
+      while(start != meet){
+        start = start.next;
+        meet = meet.next;
+      }
+      return start;
+    }
+}
