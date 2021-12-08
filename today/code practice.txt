@@ -1,0 +1,19 @@
+https://leetcode.com/problems/merge-k-sorted-lists/
+https://leetcode.com/problems/reverse-nodes-in-k-group/
+https://leetcode.com/problems/linked-list-cycle/
+https://leetcode.com/problems/merge-two-sorted-lists/
+https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+https://leetcode.com/problems/palindrome-linked-list/
+https://leetcode.com/problems/delete-node-in-a-linked-list/
+https://leetcode.com/problems/middle-of-the-linked-list/
+
+
+// binary search 
+https://leetcode.com/problems/search-insert-position/
+https://leetcode.com/problems/sqrtx/
+https://leetcode.com/problems/binary-search/
+https://leetcode.com/problems/median-of-two-sorted-arrays/
+https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/
+https://leetcode.com/problems/search-in-rotated-sorted-array/
+https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
