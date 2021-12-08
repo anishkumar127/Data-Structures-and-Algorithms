@@ -1,0 +1,126 @@
+ six sorting. 
+
+ IMPORTANT FACTORS. OF SORTING.
+  
+  (1) Size of data.
+  (2) Randomness of data.
+  (3) Time & Space Complexity.
+  (4) Stability.
+==> =< ==> <= <= =>
+
+1. SIMPLE ALGORITHMS.
+   i. Bubble Sort.
+// its use only for very very small data.
+// not much use algo.
+// try to be avoid.
+   Time Complexity. 
+   [Best - O(n), Worst - O(n^2)]
+
+
+
+   ii. Selection Sort.
+   // its only use for small data. bad time Complexity.
+   Time Complexity.
+   [Best & Worst - O(n^2)]
+
+
+
+   iii. Insertion Sort.
+// perform very good on small data. or data almost sorted.
+Time Complexity.
+
+[Best - O(n), Worst - O(n^2)]
+
+
+2. MOST USEFUL ALGORITHMS.
+
+    // LARGE AMOUNT OF DATA.
+
+  i. Merge Sort
+
+// highly optimize algo.
+// its stable algo. 
+// its require extra space.
+// divide and conquir
+        Time Complexity.
+    
+    [Best,average & Worst - O(nlogn)]
+
+        Space Complexity.
+        [Space - O(n)]
+
+
+
+ii. Quick Sort.
+
+// divide and conquir
+// small amount of memory
+
+        Time Complexity.
+
+    [Best & average - O(nlogn) , Worst - O(n^2)]
+
+        Space Complexity.
+        [Space - O(n)]
+
+    iii. Heap Sort.
+// doesn't require any extra memory.
+
+    Time Complexity.
+
+    [Best - O(n) average & worst - O(nlogn)]
+
+    Space Complexity
+
+    [Space - O(1)]
+
+-------------------------------------------------------------------------------------------------------------
+Sorting Algorithm                      	Time Complexity	                         Space Complexity
+ 	                     Best Case   	Average Case          Worst Case        	Worst Case
+Bubble Sort 	            Ω(N)	        Θ(N2)	            O(N2)	                O(1)
+Selection Sort          	Ω(N2)   	    Θ(N2)	            O(N2)	                O(1)
+Insertion Sort	            Ω(N)	        Θ(N2)	            O(N2)	                O(1)
+Merge Sort  	            Ω(N log N)  	Θ(N log N)      	O(N log N)            	O(N)
+Heap Sort	                Ω(N log N)	    Θ(N log N)      	O(N log N)          	O(1)
+Quick Sort  	            Ω(N log N)	    Θ(N log N)	        O(N2)	                O(log N)
+Radix Sort              	Ω(N k)  	    Θ(N k)  	        O(N k)  	            O(N + k)
+Count Sort	                Ω(N + k)	    Θ(N + k)	        O(N + k)	            O(k)
+Bucket Sort             	Ω(N + k)	    Θ(N + k)        	O(N2)               	O(N)
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+
+Comparison based sorting –
+
+
+Bubble sort and Insertion sort – 
+Average and worst case time complexity: n^2 
+Best case time complexity: n when array is already sorted. 
+Worst case: when the array is reverse sorted. 
+ 
+Selection sort – 
+Best, average and worst case time complexity: n^2 which is independent of distribution of data. 
+ 
+Merge sort – 
+Best, average and worst case time complexity: nlogn which is independent of distribution of data. 
+ 
+Heap sort – 
+Best, average and worst case time complexity: nlogn which is independent of distribution of data. 
+ 
+Quick sort – 
+It is a divide and conquer approach with recurrence relation: 
+ 
+ T(n) = T(k) + T(n-k-1) + cn
+Worst case: when the array is sorted or reverse sorted, the partition algorithm divides the array in two subarrays with 0 and n-1 elements. Therefore, 
+ 
+T(n) = T(0) + T(n-1) + cn
+Solving this we get, T(n) = O(n^2)
+Best case and Average case: On an average, the partition algorithm divides the array in two subarrays with equal size. Therefore, 
+ 
+T(n) = 2T(n/2) + cn
+Solving this we get, T(n) = O(nlogn)
+
+
+
