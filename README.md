@@ -17,3 +17,17 @@
 
 <!-- `` anish console.log("anish")`` -->
 
+<!-- `easy` `array` -->
+
+- [ ] [Array Rotation Scanner](https://github.com/anishkumar127/Java-Data-Structure-Algorithm-Solutions/blob/main/Arrays/Array%20Rotation%20Scanner.java) 
+<!-- - [ ] `Google` -->
+
+ 
+ [array rotation scanner](Arrays/Array Rotation Scanner.java)
+
+
+ =====
+
+
+ 
+ [array rotation scanner](#Arrays/Array Rotation Scanner.java)
