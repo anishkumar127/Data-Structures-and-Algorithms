@@ -2,9 +2,9 @@
  ``[ - 🦋 👨‍💻 🍁 - ]             [ Computers are fast, programmers keep it slow. ] ``   
 
 # `Programming` 🦋👨‍💻🍁 
-|LeetCode | Geeks For Geeks| Code Studio | Theory | Notes | PDF|
-|------|-----|-----|-----|-----|-----|
-|[Array]()   | [Array]()  | [Array]() | 
+|LeetCode | Geeks For Geeks| Code Studio | Theory | Notes | PDF |
+|---------|----------------|-------------|--------|-------|-----|
+|[Array]()   |[Array]()   |[Array]()   | 
 |[String]()  |[String]()  |[String]()  |
 |[Stacks]()  |[Stacks]()  |[Stacks]()  |
 |[Queue]()   |[Queue]()   |[Queue]()   |
