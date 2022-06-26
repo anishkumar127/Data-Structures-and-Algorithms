@@ -1,6 +1,13 @@
 # Java                             
  ``[ - 🦋 👨‍💻 🍁 - ]             [ Computers are fast, programmers keep it slow. ] ``   
 
+# `Programming` 🦋👨‍💻🍁 
+|LeetCode | Geeks For Geeks| Code Studio | Theory | Notes | PDF|
+|----| -----| -----|-----|-----|-----|-----|-----|
+|[Array]()   | [Array]()  | [Array]() | 
+|[String]()  |[String]()  |[String]()  |
+|[Stacks]()  |[Stacks]()  |[Stacks]()  |
+|[Queue]()   |[Queue]()   |[Queue]()   |
 
 ## Leetcode Stats 🦋
 <!-- ![Anish's LeetCode stats](https://leetcode-stats-six.vercel.app/api?username=anishkumar127&theme=dark) -->
@@ -21,8 +28,8 @@
 
 - [ ] [Array Rotation Scanner](https://github.com/anishkumar127/Java-Data-Structure-Algorithm-Solutions/blob/main/Arrays/Array%20Rotation%20Scanner.java)  `Google` -->
 
- 
+<!--  
 | Difficulty      | Tags | Question | Company |
 | ----------- | ----------- |-----------------|---------|
 | `easy`      |    `array`   |[Array Rotation Scanner](https://github.com/anishkumar127/Java-Data-Structure-Algorithm-Solutions/blob/main/Arrays/Array%20Rotation%20Scanner.java)  
-| `easy`   | `array`        |`Google , Facebook`
+| `easy`   | `array`        |`Google , Facebook` -->
