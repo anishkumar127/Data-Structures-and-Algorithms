@@ -2,12 +2,28 @@
  ``[ - 🦋 👨‍💻 🍁 - ]             [ Computers are fast, programmers keep it slow. ] ``   
 
 # `Programming` 🦋👨‍💻🍁 
-|LeetCode | Geeks For Geeks| Code Studio | Theory | Notes | PDF |
+<!-- |LeetCode | Geeks For Geeks| Code Studio | Theory | Series | PDF |
 |---------|----------------|-------------|--------|-------|-----|
-|[Array]()   |[Array]()   |[Array]()   | 
+|[Array]()   |[Array]()   |[Array]()   |          |  [Array](https://github.com/anishkumar127/Data-Structures-and-Algorithms/tree/main/-%20%5B%20c.o.d.e%20%5D%20%F0%9F%A6%8B/-%20%5B%20c.o.d.e%20%5D%20%F0%9F%A6%8B%20Java/-%20%5B%20Series%20%5D%20%F0%9F%A6%8B/Arrays)
 |[String]()  |[String]()  |[String]()  |
 |[Stacks]()  |[Stacks]()  |[Stacks]()  |
-|[Queue]()   |[Queue]()   |[Queue]()   |
+|[Queue]()   |[Queue]()   |[Queue]()   | -->
+
+
+<!-- | Problem | Solution Link | Difficulty |
+|---------|---------------|------------| -->
+
+
+
+## Problems
+|  Tags   | Problem                                                                                                                                                      |                                                                                       Solution                                                                                       |                                                              Difficulty                                                              |
+|:----:|-----------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------:|
+|  `array`  | [Two Sum](https://leetcode.com/problems/two-sum)                                                                                                          |                                            [Java O(n^2)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/9062e603fd5ef32c8730eb82bfd583e26413cc4c/my%20practice/Two%20Sum%20Array%20O(n%5E2).java)      , [O(n)]() - [Python]() , [JavaScript]()                                     | `easy` |
+| `string   ` | [string]() | [O(n)]() | `easy` |
+
+
+<!-- |              |           |                | -->
+
 
 ## Leetcode Stats 🦋
 <!-- ![Anish's LeetCode stats](https://leetcode-stats-six.vercel.app/api?username=anishkumar127&theme=dark) -->
@@ -33,3 +49,12 @@
 | ----------- | ----------- |-----------------|---------|
 | `easy`      |    `array`   |[Array Rotation Scanner](https://github.com/anishkumar127/Java-Data-Structure-Algorithm-Solutions/blob/main/Arrays/Array%20Rotation%20Scanner.java)  
 | `easy`   | `array`        |`Google , Facebook` -->
+
+
+<!-- [S](https://github.com/anishkumar127/Data-Structures-and-Algorithms/tree/main/-%20%5B%20c.o.d.e%20%5D%20%F0%9F%A6%8B/-%20%5B%20c.o.d.e%20%5D%20%F0%9F%A6%8B%20Java/-%20%5B%20Series%20%5D%20%F0%9F%A6%8B/Arrays) -->
+<!-- 
+[Series]: https://github.com/anishkumar127/Data-Structures-and-Algorithms/tree/main/-%20%5B%20c.o.d.e%20%5D%20%F0%9F%A6%8B/-%20%5B%20c.o.d.e%20%5D%20%F0%9F%A6%8B%20Java/-%20%5B%20Series%20%5D%20%F0%9F%A6%8B/Arrays -->
+
+
+<!-- image with link  -->
+<!-- [![Python](assets/python.png)](python/two_sum.py)                                              -->
