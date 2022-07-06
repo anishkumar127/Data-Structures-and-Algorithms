@@ -24,8 +24,8 @@
 
 <!-- |              |           |                | -->
 
-## ok [👆](#ok-there--user)
-## Leetcode Stats 🦋
+
+## LeetCode Stats 🦋
 <!-- ![Anish's LeetCode stats](https://leetcode-stats-six.vercel.app/api?username=anishkumar127&theme=dark) -->
 
 
@@ -59,6 +59,3 @@
 <!-- image with link  -->
 <!-- [![Python](assets/python.png)](python/two_sum.py)                                              -->
 
-
-
-## ok [👆](#ok-there--user)
