@@ -19,13 +19,16 @@
 
 
 ## Problems
-|  Tags   | Problem                                                                                                                                                      |                                                                                       Solution                                                                                       |                                                              Difficulty                                                              |
+|  Tags   | Problem   | Solution |   Difficulty    |
 |:----:|-----------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------:|
-|  `array`  | [Two Sum](https://leetcode.com/problems/two-sum)                                                                                                          |                                            [Java O(n^2)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/9062e603fd5ef32c8730eb82bfd583e26413cc4c/my%20practice/Two%20Sum%20Array%20O(n%5E2).java)      , [O(n)]() - [Python]() , [JavaScript]()                                     | `easy` |
-| `array   ` | [Replace Elements with Greatest Element on Right Side]() | [O(n)](src/Java/LeetCode/ReplaceElementswithGreatestElementonRightSide.java) | `easy` |
+|  `array`|  [Two Sum](https://leetcode.com/problems/two-sum)            |  [Java O(n^2)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/9062e603fd5ef32c8730eb82bfd583e26413cc4c/my%20practice/Two%20Sum%20Array%20O(n%5E2).java) , [O(n)]() - [Python]() , [JavaScript]() | `easy`|
+| `array` | [Replace Elements with Greatest Element on Right Side]() | [O(n)](src/Java/LeetCode/ReplaceElementswithGreatestElementonRightSide.java) | `easy` |
+|   `array`  | [Find minimum and maximum element in an array ]() |   [O(n)](src/Java/GFG/FindMinimumAndMaximumElementinAnArray.java)        | `easy` | 
+| `array` | [Kth smallest element]() | [O(n)](src/Java/GFG/KthSmallestElement.java) , [O(n)](KthSmallestElementPriortyQueue.java) | `easy` |
+| `array ` | [Leaders in an array]() | [O(n)](src/Java/GFG/LeadersInAnArray.java) | `easy` |
+| `array ` | [Wave Array]() | [O(n)](src/Java/GFG/WaveArray.java)| `easy` |
 
 
-<!-- |              |           |                | -->
 
 
 ## LeetCode Stats 🦋
