@@ -1,0 +1,13 @@
+1. what is factor means in java.
+
+The numbers that are completely divisible by the given number (it means the remainder should be 0) called as factors of a given number.
+
+
+2. what product means in java.
+
+The * operator in Java is used to multiply two numbers.
+
+3. what devisior means in java.
+
+To get the divisor of a number N, we should divide N by all numbers in between 1 and N including 1 and N. We will use modulus operator which gives reminder. If reminder is zero, we can say given number is divisible by another number. For ex: 10%2= 0 (10 is divisible by 2 without a reminder)
+A divisor, also called a factor,
