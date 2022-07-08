@@ -42,9 +42,9 @@
 
 ![LeetCode Stats](https://leetcard.jacoblin.cool/anishkumar127?theme=unicorn&font=Noto%20Sans&ext=activity?theme=light,unicorn&width=1000&height=400&border=0&radius=20&animation=true&ext=activity&cache=0) </a>
 ## Geeks For Geeks Stats 🦋
-<a href="https://auth.geeksforgeeks.org/user/anishbishnoi127/profile">
 
-[![Anish's geeksForgeeks stats](https://geeks-for-geeks-stats-api-napiyo.vercel.app/?userName=anishbishnoi127)](https://github.com/anishkumar127/geeksForGeeksStatsAPI) </a>
+
+[![Anish's geeksForgeeks stats](https://geeks-for-geeks-stats-api-napiyo.vercel.app/?userName=anishbishnoi127)](https://auth.geeksforgeeks.org/user/anishbishnoi127/profile) 
 
 <!-- `` anish console.log("anish")`` -->
 
