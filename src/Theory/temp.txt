@@ -30,3 +30,5 @@ Now on 3rd day we observe that stock price for last two consecutive days is less
 On 4th day only the current day where we find that stock price is less than or equal to it so for 1 consecutive day(current day) this happens.
 On 5th day we observe that stock price for last four consecutive days is less than or equal to current day i.e. (60, 70, 60, 75) thus count is 4.
 On 6th day we observe that stock price for last six consecutive days is less than or equal to current day i.e. (80, 60, 70, 60, 75, 85) thus count is 6.
+
+# ..
