@@ -1,5 +1,5 @@
 
-
+```
 class Solution(object):
     def majorityElement(self, nums):
         """
@@ -7,10 +7,10 @@ class Solution(object):
         :rtype: int
         """
         return sorted(nums)[len(nums)/2]
+```
 
-
- <!-- O(n) time & O(1) space | -->
-
+ ``O(n) time & O(1) space |``
+```
 class Solution(object):
     def majorityElement(self, nums):
         """
@@ -24,3 +24,4 @@ class Solution(object):
                 majorElement = num
             count += 1 if majorElement == num else -1
         return majorElement
+        ```

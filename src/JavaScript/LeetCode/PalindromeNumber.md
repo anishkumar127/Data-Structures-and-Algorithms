@@ -1,5 +1,5 @@
 <!-- it has O(n*n) complexity because of shift()  -->
-
+```
 var isPalindrome = function(x) {
     
      const arr = String(x).split('');
@@ -12,11 +12,11 @@ var isPalindrome = function(x) {
     
     return true;
 };
-
+```
 
 <!-- 
 This may not be the idle interview way to answer this question but just wanted to share the beauty(?) of JS -->
-
+```
 var isPalindrome = function (x) {
   return x.toString() === x.toString().split("").reverse().join("");
 };
@@ -35,9 +35,9 @@ if(x < 0) return false;
     return  rev === x
 };
 
+```
 
-
-
+```
 var isPalindrome = function(x) {
  let str = x.toString();
     let l = 0, r = str.length-1;
@@ -48,12 +48,13 @@ var isPalindrome = function(x) {
     return true;
 };
 
-
+```
 
 
 <!-- https://leetcode.com/problems/palindrome-number/discuss/1223900/Java-oror-99-Faster-than-others-oror-Optimized-code -->
 
  <!-- two pointers -->
+ ```
 var isPalindrome = function(x) {
  if (x < 0) {
     return false;
@@ -71,3 +72,4 @@ var isPalindrome = function(x) {
   
   return true;
 };
+```

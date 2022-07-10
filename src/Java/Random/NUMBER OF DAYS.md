@@ -17,7 +17,7 @@ Output
 31
 
 
-
+```
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -51,4 +51,4 @@ public class Main
 			System.out.println(30);
 	}
 }
-
+```

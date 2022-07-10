@@ -1,5 +1,5 @@
-Two pointers
-
+``Two pointers``
+```
  public int removeDuplicates(int[] nums) {
      if (nums == null || nums.length == 0) return 0;
             int i = 1, j = 0;
@@ -11,9 +11,9 @@ Two pointers
             }
             return j+1;
         }
+```
 
-
-
+```
 class Solution {
     public int removeDuplicates(int[] nums) {
         int i = 0;
@@ -23,8 +23,8 @@ class Solution {
     return i;
     }
 }
-
-
+```
+```
 public class Solution
 {
     public int removeDuplicates(int[] nums)
@@ -42,17 +42,17 @@ public class Solution
         return nums.length - dupes;
     }
 }
+```
 
-
-/**
- * Using 2 pointers.
+* Using 2 pointers.
  *
  * Time Complexity: O(N)
  *
  * Space Complexity: O(1)
  *
  * N = Length of input array.
- */
+
+```
 class Solution {
     public int removeDuplicates(int[] nums) {
         if (nums == null) {
@@ -75,4 +75,4 @@ class Solution {
     }
 }
 
-
+```

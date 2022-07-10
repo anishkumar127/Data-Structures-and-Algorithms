@@ -1,12 +1,12 @@
 
-
+```
 var majorityElement = function(nums) {
       nums.sort((a,b) => a - b);
     return nums[Math.floor(nums.length/2)];
 };
+```
 
-
-
+```
 var majorityElement = function(nums) {
      
     // Boyer-Moore Voting Algorithm
@@ -22,8 +22,8 @@ var majorityElement = function(nums) {
     
     return candidate
 };
-
-
+```
+```
 var majorityElement = function(nums) {
      
      let map = {}
@@ -38,11 +38,11 @@ var majorityElement = function(nums) {
         }      
     }
 };
+```
 
+``O(1) space and O(n) Time``
 
-<!-- O(1) space and O(n) Time -->
-
-
+```
   let len=nums.length;
     let count=0;
     let major=0;
@@ -57,10 +57,10 @@ var majorityElement = function(nums) {
         }
     }
     return major;
+```
 
-
-<!-- O(1) space and O(n) Time -->
-
+``O(1) space and O(n) Time``
+```
 var majorityElement = function(nums) {
      
  let count = 0
@@ -74,3 +74,4 @@ for(let i=0;i<nums.length;i++){
 return candidate
 
 };
+```
