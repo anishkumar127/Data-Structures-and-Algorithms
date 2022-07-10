@@ -1,8 +1,8 @@
 
-                   <!-- 1 -->
+            
                    
 <!-- https://leetcode.com/problems/palindrome-number/discuss/5472/What's-the-meaning-of-no-extra-space-(JAVA) -->
-
+```
 class Solution {
     public boolean isPalindrome(int x) {
         
@@ -23,14 +23,14 @@ class Solution {
         
     }
 }
+```
 
-
-                        <!-- 2 -->
+                       
 <!-- Time complexity: O(logN)
 Space complexity: O(1)
  -->
 
-class Solution {
+```class Solution {
     public boolean isPalindrome(int x) {
         int rev = 0, y = x;
         while (y > 0) {
@@ -41,10 +41,10 @@ class Solution {
     }
 }
 
+```
+                
 
-                    <!-- 3 -->
-
-
+```
  public boolean isPalindrome(int x) {
         if (x < 0) return false;
         int ans = 0;
@@ -57,15 +57,15 @@ class Solution {
         return true;
     }
 
-
+```
 
 <!-- 4 -->
 
 
 
 
-Java, math (no string) solution 
-
+<!-- Java, math (no string) solution  -->
+```
 class Solution {
     public boolean isPalindrome(int x)
     {
@@ -75,11 +75,11 @@ class Solution {
         return reversed == x;
     }
 }
-
+```
 
 <!-- 5 -->
  <!-- no string conversion -->
-
+```
 class Solution {
     public boolean isPalindrome(int x) {
         if (x < 0) return false;
@@ -92,5 +92,5 @@ class Solution {
         return result == x;
     }
 }
-
+```
 

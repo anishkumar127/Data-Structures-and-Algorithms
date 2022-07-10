@@ -25,7 +25,7 @@ Explanation
 
 K = 16 is found in the given array at position 4.
 
-
+```
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -56,3 +56,4 @@ public class Main
       }
 	}
 }
+```

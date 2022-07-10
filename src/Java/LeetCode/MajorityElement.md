@@ -1,4 +1,5 @@
 <!-- Boyer Moore votting  -->
+```
 class Solution {
     public int majorityElement(int[] nums) {
   
@@ -17,8 +18,10 @@ class Solution {
 	return candidate; 
     }
 }
+```
 
 
+```
 int res = nums[0];
     int count = 1;
 
@@ -35,11 +38,12 @@ int res = nums[0];
     }
 
     return res;
-
+```
 
 <!-- 
 Boyer Moore -->
 
+```
    int count = 0;
     int cand = 0;
      for(int num : nums){
@@ -56,8 +60,11 @@ Boyer Moore -->
     
 }
 
+```
 
-	int n = nums.length;
+
+```
+    int n = nums.length;
     int element=0;
     int count=0;
     
@@ -76,10 +83,11 @@ Boyer Moore -->
     }
     return element;
 }
+```
 
 
 <!-- It simply uses Moore's Voting Algo. -->
-
+```
   int count = 0 ;
 		int candidate = 0;
 
@@ -93,10 +101,10 @@ Boyer Moore -->
 		}
 		return candidate;
 
-
+```
 
 <!-- 1. Using Divide and Conquer Runtime ~ 2 ms -->
-
+```
 class Solution {
     public int majorityElement(int[] nums) {
 		//1. check by divide and conquer algo 
@@ -140,8 +148,9 @@ class Solution {
         return leftCount>rightCount? left: right;
     }
 }
+```
 <!-- 2. Using HashMap Runtime ~ 10 ms -->
-
+```
 class Solution {
     public int majorityElement(int[] nums) {
 	//1. find middle 
@@ -172,10 +181,10 @@ class Solution {
         return ans;
     }
 }
-
+```
 
 <!-- 3. Using sorting Runtime ~ 5ms -->
-
+```
 class Solution {
     public int majorityElement(int[] nums) {
 		//1. sort the array
@@ -186,9 +195,9 @@ class Solution {
         
     }
 }
-
+```
  <!-- Moore voting algorithm -->
-
+```
 public int majorityElement3(int[] nums) {
     int count=0, ret = 0;
     for (int num: nums) {
@@ -202,8 +211,8 @@ public int majorityElement3(int[] nums) {
     return ret;
 }
 
-
-
+```
+```
 public int majorityElement2(int[] nums) {
     Map<Integer, Integer> myMap = new HashMap<Integer, Integer>();
     //Hashtable<Integer, Integer> myMap = new Hashtable<Integer, Integer>();
@@ -221,5 +230,5 @@ public int majorityElement2(int[] nums) {
     return ret;
 }
 
-
+```
 

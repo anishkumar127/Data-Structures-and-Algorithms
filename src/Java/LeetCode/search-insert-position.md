@@ -1,7 +1,7 @@
 https://leetcode.com/problems/search-insert-position/
 
-Runtime: 0 ms, faster than 100.00%
-
+``Runtime: 0 ms, faster than 100.00%``
+```
 class Solution {
     public int searchInsert(int[] nums, int target) {
         int index =0;
@@ -15,8 +15,8 @@ class Solution {
         return index;
     }
 }
-
-
+```
+```
 int low = 0, high = A.length;
 while(low<high) {
 	mid=low+(high-low)/2; // low<=mid, mid<high
@@ -24,9 +24,9 @@ while(low<high) {
 	else low=mid+1; // low always increases
 }
 return low;
+```
 
-
-class Solution {
+```class Solution {
     public int searchInsert(int[] arr, int target) {
         
         int lo = 0, hi = arr.length-1;
@@ -48,9 +48,8 @@ class Solution {
         return lo;
     }
 }
+```
 
-
-/**
  * Optimized Binary Search w/ Early Exits
  *
  * We are trying to find the index of number equal to target or index of number
@@ -61,7 +60,9 @@ class Solution {
  * Space Complexity: O(1)
  *
  * N = Length of the input array.
- */
+
+
+```
 class Solution {
     public int searchInsert(int[] nums, int target) {
         if (nums == null) {
@@ -101,8 +102,8 @@ class Solution {
         return start;
     }
 }
-
-
+```
+```
 class Solution {
     public int searchInsert(int[] nums, int target) {
 
@@ -117,8 +118,8 @@ class Solution {
 
     }
 }
-
-
+```
+```
 class Solution {
     public int searchInsert(int[] nums, int target) {
        int i=0;
@@ -128,8 +129,9 @@ class Solution {
         return i;
     }
 }
-
-O(n)
+```
+``O(n)``
+```
 class Solution {
     public int searchInsert(int[] nums, int target) {
         int c = 0;
@@ -143,9 +145,10 @@ class Solution {
         return c;
     }
 }
+```
 
-
-O(logN)
+``O(logN)``
+```
 public class Solution {
     public int searchInsert(int[] A, int target) {
         
@@ -174,10 +177,10 @@ public class Solution {
         
     }
 }
+```
 
-
-//cpp
-
+``cpp``
+```
 class Solution {
 public:
     int searchInsert(vector<int>& a, int tgt) {
@@ -191,6 +194,6 @@ public:
         return lo;        
     }
 };
-
+```
 
 

@@ -16,7 +16,7 @@ Output
 
 Return an integer containing converted temperature to Celsius.
 
-
+```
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -31,3 +31,4 @@ public class Main
           System.out.print(t);
 	}
 }
+```

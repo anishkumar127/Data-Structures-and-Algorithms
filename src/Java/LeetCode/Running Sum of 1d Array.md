@@ -1,8 +1,13 @@
 
 <!-- Runtime: 0 ms, faster than 100.00%  -->
-<!-- Always see do we really need a new array to store our result into? Usually we can store our results in the same input array, if the the input array is not required after a point. -->
-<!-- Using same array to store result to make space complexity from O(N) to O(1)
-Updating the values of nums as the value of sum gets updated. -->
+
+``Always see do we really need a new array to store our result into? Usually we can store our results in the same input array, if the the input array is not required after a point.``
+
+``Using same array to store result to make space complexity from O(N) to O(1)``
+
+``Updating the values of nums as the value of sum gets updated.``
+
+```
 class Solution {
     public int[] runningSum(int[] nums) {
        
@@ -16,10 +21,10 @@ class Solution {
        
             }
 }
+```
 
 
-
-
+```
 
 class Solution {
     public int[] runningSum(int[] nums) {
@@ -32,8 +37,8 @@ class Solution {
         return nums;
     }
 }
-
-
+```
+```
 class Solution {
     public int[] runningSum(int[] nums) {
     int[] ans = new int[nums.length];
@@ -43,12 +48,13 @@ class Solution {
     return ans;
     }
 }
-
-Time O(N)
+```
+``Time O(N)
 Space O(1)
 Explanation
 Loop once, we can get the sum of subarray starting from the initial point.
-
+``
+```
 public int[] runningSum(int[] nums) {
         int i = 1;
         while (i<nums.length){
@@ -58,7 +64,8 @@ public int[] runningSum(int[] nums) {
         return nums;
     }
 
-
+```
+```
 class Solution {
     public int[] runningSum(int[] nums) {
         int[] ans = new int[nums.length];
@@ -73,3 +80,4 @@ class Solution {
         return ans;
     }
 }
+```
