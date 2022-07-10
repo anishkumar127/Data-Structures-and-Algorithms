@@ -35,29 +35,29 @@
 |`array`|  [Remove Duplicates from Sorted List]() | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/LeetCode/Remove%20Duplicates%20from%20Sorted%20List.md)   | `easy`|
 |`array`|  [Palindrome Number]() | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/LeetCode/PalindromeNumber.md)   | `easy`|
 |`array`|  [Majority Element.]() | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/LeetCode/MajorityElement.md)   | `easy`|
-|`array`|  [Print alternate elements of an array]() | [](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/GFG/Print%20alternate%20elements%20of%20an%20array%20.md)   | `easy`|
-|`array`|  [Reverse array in groups]() | [](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/GFG/Reverse%20array%20in%20groups%20.md)   | `easy`|
-|`array`|  [Rotate Array 2]() | [](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/GFG/Rotate%20Array%202%20.md)   | `easy`|
-|`array`|  [Rotate Array]() | [](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/GFG/Rotate%20Array.md)   | `easy`|
-|`array`|  [Second Largest]() | [](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/GFG/Second%20Largest.java)   | `easy`|
+|`array`|  [Print alternate elements of an array]() | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/GFG/Print%20alternate%20elements%20of%20an%20array%20.md)   | `easy`|
+|`array`|  [Reverse array in groups]() | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/GFG/Reverse%20array%20in%20groups%20.md)   | `easy`|
+|`array`|  [Rotate Array 2]() | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/GFG/Rotate%20Array%202%20.md)   | `easy`|
+|`array`|  [Rotate Array]() | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/GFG/Rotate%20Array.md)   | `easy`|
+|`array`|  [Second Largest]() | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/GFG/Second%20Largest.java)   | `easy`|
  |`array`|  [Sum of Array]() | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/GFG/Sum%20of%20Array%20.md)   | `easy`|
- |`array`|  [Third largest element]() | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/GFG/Third%20largest%20element.md)   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
- |`array`|  []() | [O(n)]()   | `easy`|
+ |`array`|  [Third largest element](#) | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/70746ee77d3ac86404c8841938b82bc2ad1a8820/src/Java/GFG/Third%20largest%20element.md)   | `easy`|
+ |`array`|  [Searching a number](#) | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/9f19cf017f04c9a6e073b22724297fa4a6fdbbab/src/Java/Random/Searching%20a%20number.md)   | `easy`|
+ |`array`|  [Reverse digits of a Number](#) | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/9f19cf017f04c9a6e073b22724297fa4a6fdbbab/src/Java/Random/Reverse%20digits%20of%20a%20Number.md)   | `easy`|
+ |`array`|  [Second largest elements](#) | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/9f19cf017f04c9a6e073b22724297fa4a6fdbbab/src/Java/Random/Second%20largest%20elements.java)   | `easy`|
+ |`array`|  [Remove Duplicates from Sorted Array](#) | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/9f19cf017f04c9a6e073b22724297fa4a6fdbbab/src/Java/Random/Remove%20Duplicates%20from%20Sorted%20Array.java)   | `easy`|
+ |`array`|  [Find Pivot Index](#) | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/9f19cf017f04c9a6e073b22724297fa4a6fdbbab/src/Java/LeetCode/Find%20Pivot%20Index.java)   | `easy`|
+ |`array`|  [Contains Duplicate ](#) | [O(nlogn) O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/9f19cf017f04c9a6e073b22724297fa4a6fdbbab/src/Java/LeetCode/Array/Contains%20Duplicate%20O(nlogn)%20O(n).java)   | `easy`|
+ |`array`|  [Maximum Subarray](#) | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/9f19cf017f04c9a6e073b22724297fa4a6fdbbab/src/Java/LeetCode/Array/Maximum%20Subarray.java)   | `easy`|
+ |`array`|  [Remove Duplicates from Sorted Array](#) | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/9f19cf017f04c9a6e073b22724297fa4a6fdbbab/src/Java/LeetCode/Array/Remove%20Duplicates%20from%20Sorted%20Array.java)   | `easy`|
+ |`array`|  [Two Sum O(n) 3 approach](#) | [O(n)](https://github.com/anishkumar127/Data-Structures-and-Algorithms/blob/9f19cf017f04c9a6e073b22724297fa4a6fdbbab/src/Java/LeetCode/Array/Two%20Sum%20O(n)%203%20approach.java)   | `easy`|
+ |`array`|  [](#) | [O(n)]()   | `easy`|
+ |`array`|  [](#) | [O(n)]()   | `easy`|
+ |`array`|  [](#) | [O(n)]()   | `easy`|
+ |`array`|  [](#) | [O(n)]()   | `easy`|
+ |`array`|  [](#) | [O(n)]()   | `easy`|
+ |`array`|  [](#) | [O(n)]()   | `easy`|
+ |`array`|  [](#) | [O(n)]()   | `easy`|
 
 
 <!-- |`array`|  []() | [O(n)]()   | `easy`| -->
