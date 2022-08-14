@@ -1,3 +1,10 @@
+// Greedy Solution
+// Idea: Use left to record the nearest left different number. Update left when it's a hill or valley.
+// Time complexity: O(N)
+// Space complexity: O(1)
+
+
+
 import java.util.*;
 // Input: nums = [2,4,1,1,6,5]
 // Output: 3
@@ -24,3 +31,22 @@ public class Main {
      
   }
 }
+
+
+
+
+       int ans = 0;
+        int left = arr[0];
+        for(int i = 1; i < arr.length-1; i++){
+            if(arr[i] > arr[i+1] && arr[i] > left){
+                ans++;
+                left=arr[i];     
+            }
+            else if(arr[i] < arr[i+1] && arr[i] < left){
+                ans++;
+                left=arr[i];
+            }
+        }
+        return ans;
+
+
