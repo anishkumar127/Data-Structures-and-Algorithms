@@ -53,6 +53,24 @@ class Solution {
     }
 }
 
+// for each and ToCharArray
+class Solution {
+    public int firstUniqChar(String s) {
+  int count[] = new int[26];
+        for(int i:s.toCharArray()){
+            count[i-'a']++;
+        }
+        for(int i=0; i<s.length(); i++){
+            if(count[s.charAt(i)-'a']==1){
+                return i;
+            }
+        }
+            return -1;       
+    }
+}
+
+
+
 
 // faster .
 
@@ -190,3 +208,80 @@ Then I remembered I am iterating the string from first char to last char as I ch
 */
 
 
+
+// pq hashmat array list mix. 
+
+class Solution {
+public int firstUniqChar(String s) {
+
+	//Hash Map which will store all index's where a letter is repeating in value of map and which letter in key of map
+    HashMap<Character,ArrayList<Integer>> map =
+        new HashMap<>();
+   
+    //Queue which will store all values of those letters that have only one usage in the string
+    PriorityQueue<Integer> q = new PriorityQueue<>();
+    
+    
+	//Iterate and add every key value pair
+    for(int i = 0 ; i < s.length() ; i++){
+        
+        Character key = s.charAt(i);
+        if (map.get(key) == null) {
+        map.put(key, new ArrayList<Integer>());
+        }
+        
+        map.get(key).add(i);
+    }
+	
+    //Iterate the hashmap to find values(ArrayList) that have a size of one meaning only one usage
+    for (Map.Entry<Character, ArrayList<Integer>> ee : map.entrySet()) {
+        
+    ArrayList<Integer> values = ee.getValue();
+    if(values.size() == 1){
+        q.add(values.get(0));
+    }
+    }
+    
+	//If after all this q is empty then there are no unique letters
+    if(q.isEmpty()){
+        q.add(-1);
+    }
+    
+    return q.peek(); //Top of priority queue is the answer
+}
+}
+
+
+class Solution {
+		public int firstUniqChar(String s) {
+        int ans = Integer.MAX_VALUE;
+        for (char i = 'a'; i <= 'z';i++) {
+            int ind = s.indexOf (i);
+            if (ind != -1 && ind == s.lastIndexOf (i))
+                ans = Math.min (ans,ind);
+        }
+        if (ans == Integer.MAX_VALUE)
+            return -1;
+        return ans;
+    }
+
+
+
+
+
+
+// O(n^2)
+
+ public int firstUniqChar(String s) {
+        for(int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if(s.indexOf(c) == s.lastIndexOf(c)) {
+                return i;
+            }
+        }
+        
+        return -1;
+    }
+
+
+    
