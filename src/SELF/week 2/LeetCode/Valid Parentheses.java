@@ -1,3 +1,15 @@
+/*
+Algorithms:- 
+i) First, we need to traverse an input string and pick each character at a time.
+
+ii) If the current character is starting bracket ‘{‘, ‘(‘, ‘[‘ then push it in a stack.
+
+iii) If the current character is closing bracket ‘}’, ‘)’, ‘]’ and the top of the stack is starting bracket then pop from the stack.
+
+iv) After complete traversal, if the stack is empty then it is balanced parentheses otherwise it is not balanced.
+
+*/
+
 import java.util.*;
 // input: ()[]{} : output: true.
 public class Main {
@@ -5,10 +17,10 @@ public class Main {
       Scanner sc = new Scanner(System.in);
       String s = sc.nextLine();
       
-      Stack<Character> stack = new Stack<>();
+      Stack<Character> stack = new Stack<>(); // O(n)
      
       // string Character process. 
-      for(char c: s.toCharArray()){
+      for(char c: s.toCharArray()){ // O(n)
         if(c=='(' || c=='[' || c =='{'){
           stack.add(c);
         }else{
