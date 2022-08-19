@@ -53,6 +53,48 @@ Output: "e"
   */
 
 
+// 1ms 100% faster solution. 
+// convert to char Array and then sum it and first S string sum and T string subtract from sum. and then find difference and return as a character.
+class Solution {
+    public char findTheDifference(String s, String t) {
+      int total = 0;
+        
+        for(int n: s.toCharArray()){
+            total+=n;
+        }
+        for(int n: t.toCharArray()){
+            total-=n;
+        }
+        return (char) Math.abs(total);
+    }
+   
+}   
+
+// 1ms 100% faster solution.
+
+class Solution {
+    public char findTheDifference(String s, String t) {
+        
+        int [] counts = new int [26];
+        for(char ch:s.toCharArray()){
+            counts[ch-'a']++;
+        }
+        for(char ch:t.toCharArray()){
+            counts[ch-'a']--;
+            
+            if(counts[ch-'a']<0)
+                return ch;
+        }
+        
+        return '!';
+    }
+   
+}   
+
+
+
+
+// XOR
 class Solution {
     public char findTheDifference(String s, String t) {
           char c = 0;
@@ -63,6 +105,29 @@ class Solution {
     }
 }   
 
+
+/**
+
+To get the sum of the ASCII values of all letters present in strings s and t and store them separately
+And return the difference of the sums type-cast to char which will give the letter that was added extra (Because the difference would itself be an ASCII value)
+
+// TC: O(n), SC: O(1)
+ */
+class Solution {
+    public char findTheDifference(String s, String t) {
+      int s_sum = 0;
+      int t_sum =0;
+      // do sum of string T & S.
+       for(int i=0; i<s.length(); i++){
+           s_sum+=s.charAt(i);
+       }
+    for(int i=0; i<t.length(); i++){
+        t_sum +=t.charAt(i);
+    }
+        return (char) (t_sum-s_sum); // sum convert to character then we found what extra character present in string T.
+    }
+   
+}
 
 
 // 14ms   hashmap.
@@ -166,5 +231,86 @@ class Solution {
     }
 }
 
+   
 
+
+
+/*
+
+
+We need to use count of every char because this is what stays constant after permutation of the original string. As we know possible range of chars and it's small - only english lowercase letters which is 26 - we can use preallocated array that will keep count of every char. '
+Scan the original string and increment count of every char. Index of the count can be calculated as "char - 'a'" which gives range [0...25].
+Do the second scan of the t (processed) string, for each character decrement it's count from the array of counts. Three cases are possible:
+char has only change place, count will be the same between two strings, at the end count array will have 0 for this char.
+example is char "a" in s="aabd" and t="adbat", count will be 2 after scaning of s and 0 after scaning of t
+
+one of existing characters has been added to t, in this case count array will have count_of_char, but t will have count_of_char + 1. if we decrement the count at the end we'll have -1 for this char.
+example is char "a" in s="aabd" and t="adaba", count will be 2 after scaning of s and -1 after scaning of t
+
+some character that was not present in original string has been added. in such case count array will have 0 for this char, and when we decrement the count at the end we'll have -1 for this char.
+example is char "t" in s="aabd" and t="adabt", count will be 0 after scaning of s and -1 after scaning of t
+
+It should be obvious at this point that the char that has been added will produce -1 during the scanning of t string. We need to check the count after every one character has been processed and return the character that caused this -1 count.
+
+O(n) time - scan both string once, O(n) + O(n + 1) gives as O(n)
+O(1) space - array is preallocated (with length 26) and thus does not depend on size of the input.
+
+ */
+public char findTheDifference(String s, String t) {
+    int[] counts = new int[26];
+    for (char ch : s.toCharArray()) {
+        ++counts[ch-'a'];
+    }
+    for (char ch : t.toCharArray()) {
+        --counts[ch - 'a'];
+        if (counts[ch - 'a'] < 0)
+            return ch;
+    }
+    return ' ';
+}
+
+
+
+// hashset
+
+class Solution {
+    public char findTheDifference(String s, String t) {
+        
+        
+        Set<Character> set = new HashSet<>();
+        for(char ch:(s+t).toCharArray()){
+            if(!set.add(ch)){
+                set.remove(ch);
+            }else{
+                set.add(ch);
+            }
+        }
+        Iterator<Character> iterator = set.iterator();
+        return iterator.next();
+    }
+   
+}   
+
+/*
+
+Length of t is equal to length to s + 1
+
+initalize sum with the last char in t string so now we can loop over s and t with the same length and cover all letters
+
+add to sum the different between current char in s with current char in t, so it will add 0 if they are equals
+
+at the end we will have the wanted result in sum :D
+ */
+
+class Solution {
+    public char findTheDifference(String s, String t) {
+        int len = s.length();
+        char sum = t.charAt(len);
+        
+        for(int i = 0 ; i < len ; i++) 
+            sum += t.charAt(i) - s.charAt(i);
+        
+        return sum;
+    }
+}
 
