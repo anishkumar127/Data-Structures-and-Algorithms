@@ -64,7 +64,39 @@ class Solution {
 }
 
 
+// edge cases.
+if(s.length() > t.length()) return false;
+if(s.length() == 0 && t.length() !=0 ) return true;
+if(s.length() != 0 && t.length() ==0 ) return false;
+if (s.length() == 0) return true;
+if (t.length() == 0) return false;
 
+
+
+
+
+// with all edge cases 92% faster 1ms
+
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        if(s.length() > t.length()) return false;
+        if(s.length() == 0 && t.length() !=0 ) return true;
+        if(s.length() != 0 && t.length() ==0 ) return false;
+        if (s.length() == 0) return true;
+        if (t.length() == 0) return false;
+        int s_pointer=0;
+        int t_pointer=0;
+        while(s_pointer<s.length() && t_pointer<t.length()){
+            if(s.charAt(s_pointer)==t.charAt(t_pointer)){
+                s_pointer++;
+                if(s_pointer==s.length()) return true;
+            }
+            t_pointer++;
+        }
+        
+        return false;
+    }
+}
 
 
 
