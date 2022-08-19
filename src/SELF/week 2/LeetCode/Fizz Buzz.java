@@ -1,4 +1,7 @@
-
+/*
+in which we simple iterating and where find modular % 3 5  where we instead of printing index. just 
+print the string fizz buzz  rest of just printing the indexes. 
+ */
 class Solution {
     public List<String> fizzBuzz(int n) {
         List<String> list = new ArrayList<>();
