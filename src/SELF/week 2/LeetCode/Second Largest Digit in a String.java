@@ -22,7 +22,7 @@ class Solution {
 
 
 // pq and hashset.
-
+// 5-7 ms
 class Solution {
     public int secondHighest(String s) {
      Set<Integer> set = new HashSet<>();
