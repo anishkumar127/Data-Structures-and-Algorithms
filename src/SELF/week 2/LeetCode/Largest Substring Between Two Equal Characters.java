@@ -37,8 +37,36 @@ public class Main {
 
 */
 
+// tc O(n+n) = O(2n) = O(n);
+import java.util.*;
 
+public class Main {
+    public static void main(String[] args) {
+       String s="cabbac";
+     int [] lastIndex = new int[26]; // 
+     Arrays.fill(lastIndex,-1); // initialize to all 26 to -1;
+     
+     for(int i=0; i<s.length(); i++){
+       // puting the lastindex of every character c a b c ; c last is 5 
+       lastIndex[s.charAt(i)-'a']=i; //435-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1
+     }
+     
+    // for(int x:lastIndex)System.out.print(x); 435-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1
+    int largest=-1;
+    for(int i=0; i<s.length(); i++){
+      int current_ch =s.charAt(i)-'a'; // current character get. 
+      // getting every character
+      // System.out.print(current_ch+" "); // 2 0 1 1 0 2  a is 0; 1 is b 3 is c. z is 25.
+      if(lastIndex[current_ch]!=-1 && lastIndex[current_ch]!=i){
+        // lastIndex != -1;  and lastIndex not current index (i);
+        // System.out.print(lastIndex[current_ch]);  // 5 4 3 
+        largest = Math.max(largest,lastIndex[current_ch]-i-1); // 5-0-1 = 4 , 5-4-1= 0; 5-3-1=1;
+      }
+    System.out.print(largest); 
+    }
 
+  }
+}
 
 
 
