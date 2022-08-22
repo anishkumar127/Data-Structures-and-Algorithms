@@ -1,3 +1,25 @@
+// 1ms hashmap 
+
+class Solution {
+    public int maxLengthBetweenEqualCharacters(String s) {
+        HashMap<Character,Integer> map  = new HashMap<>();
+        int largest =-1;
+        for(int i=0; i<s.length(); i++){
+            char current_ch= s.charAt(i);
+            if(map.containsKey(current_ch)){          // if contains current key the find max.
+                largest=Math.max(largest, i-map.get(current_ch)-1);
+            }else{
+                map.put(current_ch,i);      // if not contains then put into the hashmap.
+            }
+        }
+        
+        return largest;
+    }
+}
+
+
+
+
 
 // tc O(n^2);
 import java.util.*;
