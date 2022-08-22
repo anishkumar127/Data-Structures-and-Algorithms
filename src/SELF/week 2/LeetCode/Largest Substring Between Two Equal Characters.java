@@ -18,6 +18,21 @@ class Solution {
 }
 
 
+// 1 ms memory usage also.
+class Solution {
+    public int maxLengthBetweenEqualCharacters(String s) {
+       int largest= -1;
+        for(int i=0; i<s.length(); i++){
+            char current_ch= s.charAt(i);
+            int lastIndex = s.lastIndexOf(current_ch); // give last index of current_index;
+            if(lastIndex!=i){
+                largest=Math.max(largest,lastIndex-i-1);
+            }
+        }
+            
+        return largest;
+    }
+}
 
 
 
@@ -90,6 +105,28 @@ public class Main {
   }
 }
 
+
+
+
+// brute force .
+//  s.length()-1; on i 
+// it will work with s.length also. but next loop from i+1, so we do not need to for s.length. so we reduce 1 iteration. and it will little bit faster that why:)
+
+public int maxLengthBetweenEqualCharacters(String s) {
+        int count = 0;
+    	 int ans = -1;
+    	 for (int i = 0; i < s.length()-1; i++) {
+			for (int j = i+1; j < s.length(); j++) {
+				if(s.charAt(i)==s.charAt(j)) {
+					count = j-i-1;
+					if(ans<count) {
+						ans = count;
+					}
+				}
+			}
+		}
+		return ans;
+    }
 
 
 // theory part.
