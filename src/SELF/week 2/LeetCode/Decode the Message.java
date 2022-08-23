@@ -57,6 +57,55 @@ class Solution {
 
 
 
+Map Based :
+
+    public String decodeMessage(String s, String m) {
+        StringBuilder sb = new StringBuilder("");
+        HashMap<Character,Character> hm = new HashMap<>();
+        int i = 0;
+        
+        for(char ch : s.toCharArray())
+        {
+            if(ch==' ' || hm.containsKey(ch)) continue;
+            
+            hm.put(ch ,(char)(i+'a'));
+            i++;
+            if(i==26) break;
+        }
+        
+        for(char ch : m.toCharArray())
+        {
+            if(ch==' ') sb.append(" ");
+            else sb.append(hm.get(ch));
+        }
+        
+        return sb.toString();
+    }
+Array Based :
+
+    public String decodeMessage(String s, String m) {
+        StringBuilder sb = new StringBuilder("");
+        char arr[] = new char[26];
+        int i = 0;
+        
+        for(char ch : s.toCharArray())
+        {
+            if(ch==' ' || arr[ch-'a']!=0 ) continue;
+            
+            arr[ch-'a'] = (char)(i + 'a');
+            i++;
+            if(i==26) break;
+        }
+        
+        for(char ch : m.toCharArray())
+        {
+            if(ch==' ') sb.append(" ");
+            else sb.append( arr[ch-'a'] );
+        }
+        
+        return sb.toString();
+    }
+
 // theory part.
 
 /**
