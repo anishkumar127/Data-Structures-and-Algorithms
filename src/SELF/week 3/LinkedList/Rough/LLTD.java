@@ -31,7 +31,7 @@ public class LLTD {
 
         System.out.println( size(head)); // size
 
-        // get node at
+        // get node at data.
         System.out.println(getNodeAt(head,3));
 
         // add first
@@ -40,10 +40,36 @@ public class LLTD {
 
         System.out.println();
         // add at idx.
-       addAt(head,2,108);
+//       addAt(head,2,108); // wrong code
+
+        // add or insert node at
+        insertNodeAt(head,2,108); // working code. edge cases cover.
         display(head);
     }
+    // get node at node
+    private static Node getNode(Node head, int idx){
+        int currIndex =0;
+        Node current = head;
+        while(current!=null){
+            if(currIndex==idx) return current;
+            current = current.next;
+            currIndex++;
+        }
+        return null;
+    }
     // add At - index.
+    private static  Node insertNodeAt(Node head,  int idx,int data ){
+        // edge case.
+        if(idx>size(head) || idx<0 ) return  head;
+        if(head==null || idx ==0) return addFirst(head,data);
+        Node newNode = new Node(data);
+        Node before = getNode(head,idx-1);
+        Node after = before.next;
+
+        before.next = newNode;
+        newNode.next = after;
+        return head;
+    }
     private static Node addAt(Node head, int idx, int data){    // wrong code.
         // edge case
         /*
