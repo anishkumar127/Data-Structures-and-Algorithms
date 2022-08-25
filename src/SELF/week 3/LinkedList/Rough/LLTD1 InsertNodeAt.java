@@ -1,11 +1,10 @@
 package LinkedList;
-
-public class LLTD {
+public class LLTD1 {
     private static class Node{
         int data;
         Node next;
         // constructor
-         Node(int data){
+        Node(int data){
             this.data=data;
             this.next=null;
         }
@@ -13,38 +12,13 @@ public class LLTD {
 
     }
     public static void main(String[] args) {
-          Node head =null;
-          Node tail = null;
-        for(int i=1; i<=5; i++){   // taking the input.
-            if(head==null){
-                head= new Node(i);
-                tail=head;
-            }else{
-                Node temp = new Node(i);
-                tail.next=temp;
-                tail=temp;
-            }
+
+        Node head = null;
+        for(int i=0; i<=5; i++){
+            head = insertNodeAt(head,i,i*10);
         }
-        display(head);  // print
+        display(head); // 0 -> 10 -> 20 -> 30 -> 40 -> 50 -> null
 
-        System.out.println();
-
-        System.out.println( size(head)); // size
-
-        // get node at data.
-        System.out.println(getNodeAt(head,3));
-
-        // add first
-       head=addFirst(head,11);  // after calling have to update the head.
-        display(head);
-
-        System.out.println();
-        // add at idx.
-//       addAt(head,2,108); // wrong code
-
-        // add or insert node at
-        insertNodeAt(head,2,108); // working code. edge cases cover.
-        display(head);
     }
     // get node at node
     private static Node getNode(Node head, int idx){
@@ -70,30 +44,15 @@ public class LLTD {
         newNode.next = after;
         return head;
     }
-    private static Node addAt(Node head, int idx, int data){    // wrong code.
-        // edge case
-        /*
-        * empty    [x]
-        * single   [x]
-        * at last  [x]
-        * at first [x]
-        * at middle something middle  [x]
-        * */
-        if(idx==0) return addFirst(head,data);
-     Node current = head;
-     int currIndex = -1;
-     while(current!=null){
-         if(currIndex ==idx){
-             // 2 -> 108  -> 3
-             Node newNode = new Node(data);   // 108
-             newNode.next = current.next;   //  108.next = 2.next  = 108 -> 3
-             current.next = newNode;       // 2.next = 108        =  2 ->  108
-         }
-         current=current.next;
-         currIndex++;
-     }
-     return head;
-    }
+    // edge case
+    /*
+     * empty    [x]
+     * single   [x]
+     * at last  [x]
+     * at first [x]
+     * at middle something middle  [x]
+     * */
+
     // add first
     private static Node addFirst(Node head,int data){
         Node newNode = new Node(data);
@@ -120,7 +79,6 @@ public class LLTD {
             length++;
             current=current.next;
         }
-        
         return length;
     }
     // print
