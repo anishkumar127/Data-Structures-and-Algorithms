@@ -13,12 +13,28 @@ public class LLTD1 {
     }
     public static void main(String[] args) {
 
-        Node head = null;
+        Node head = null;  // if no node and node is null.
         for(int i=0; i<=5; i++){
             head = insertNodeAt(head,i,i*10);
         }
         display(head); // 0 -> 10 -> 20 -> 30 -> 40 -> 50 -> null
-
+        
+//        if we have already one node. 
+        Node head = new Node(0);
+        for(int i=1; i<=5; i++){
+            insertNodeAt(head,i,i*10);
+        }
+        display(head);
+        
+    }
+//    get tail 
+    private static Node getTail(Node head){
+        if(head==null) return null;
+        Node current = head;
+        while(current!=null && current.next!=null){
+            current=current.next;
+        }
+        return current;
     }
     // get node at node
     private static Node getNode(Node head, int idx){
@@ -38,9 +54,10 @@ public class LLTD1 {
         if(head==null || idx ==0) return addFirst(head,data);
         Node newNode = new Node(data);
         Node before = getNode(head,idx-1);
-        Node after = before.next;
 
-        before.next = newNode;
+        Node after = (before==null) ? null :before.next; // OR Node after = before.next;
+//        assert before != null;  // handle null pointer Exception.  OR Below
+      if(before!=null) before.next = newNode;
         newNode.next = after;
         return head;
     }
@@ -58,17 +75,6 @@ public class LLTD1 {
         Node newNode = new Node(data);
         newNode.next= head;
         return newNode;
-    }
-    // get Node at index
-    private static int getNodeAt(Node head, int idx){
-        Node current = head;
-        int currentIndex = 0;
-        while(current!=null){
-            if(currentIndex==idx) return current.data;  // return value which present at index 3.
-            currentIndex++;
-            current=current.next;
-        }
-        return -1;  // if not present return -1;
     }
 
     // get size
