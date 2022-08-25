@@ -44,7 +44,7 @@ public class LLTD {
         display(head);
     }
     // add At - index.
-    private static void addAt(Node head, int idx, int data){
+    private static Node addAt(Node head, int idx, int data){    // wrong code.
         // edge case
         /*
         * empty    [x]
@@ -53,19 +53,20 @@ public class LLTD {
         * at first [x]
         * at middle something middle  [x]
         * */
+        if(idx==0) return addFirst(head,data);
      Node current = head;
      int currIndex = -1;
      while(current!=null){
-         if(currIndex +1 ==idx){
+         if(currIndex ==idx){
              // 2 -> 108  -> 3
              Node newNode = new Node(data);   // 108
              newNode.next = current.next;   //  108.next = 2.next  = 108 -> 3
              current.next = newNode;       // 2.next = 108        =  2 ->  108
-             return;
          }
          current=current.next;
          currIndex++;
      }
+     return head;
     }
     // add first
     private static Node addFirst(Node head,int data){
