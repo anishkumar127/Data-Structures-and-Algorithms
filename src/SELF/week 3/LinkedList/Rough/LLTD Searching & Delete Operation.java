@@ -147,3 +147,6 @@ public class LLTDFindandDeleteNode {
         System.out.print("null");
     }
 }
+
+
+// private static Node deleteNode at data (Node head, int data);  
