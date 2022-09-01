@@ -186,7 +186,102 @@ size = 1;
     * */
 }
 
-    public static void main(String[] args) {
+
+
+// get first
+public int getFirst() throws Exception{
+        if(size==0){
+            throw new Exception("LL is empty!");
+        }
+        return head.data;
+
+        /*
+        *  get the first element of node. if not then print ll is empty.
+        *  throw new exception use for throw the exception.
+        *  is become danger function.
+        * */
+    }
+
+
+    // getLast
+    public int getLast()throws Exception{
+        if(size==0){
+            throw new Exception("LL is empty!");
+        }
+        return tail.data;
+        /*
+         tail.data; because i know tail point to last element of node.
+         and if node is impty then throw exception.
+         we have to use size==0 exception if we dont use this.
+         then it will throw null pointer exception.
+         because tail.data = null;  if size 0;
+         if we use tail then get tail Time complexity is O(1);
+         if we don't use tail then we have to traverse and
+         the TC will be O(n);
+
+         */
+
+    }
+
+
+    // get At
+    public int getAt(int idx) throws Exception{
+
+        if(size==0){
+            throw new Exception("LL is empty!");
+        }
+        if(idx<0 || idx>= size){
+            throw  new Exception("Invalid Index");
+        }
+
+        Node current_node = head;
+        for(int i=1; i<=idx; i++){   // break loop when i reached equal to idx. and after that that idx point and we return it.
+            current_node= current_node.next;
+        }
+        return current_node.data;   // pointing to that idx which i wanted. so return this.
+
+       /*
+    - we given particular index.
+    index - 10
+    index 1 = 20;
+    if index > size exception throw. because index we are searching not present in LL.
+        if index <0 assume idx we want in -1 minus that will be the wrong.
+        if idx> then will be the error. or == also will be the error.
+        idx starting 0 to n
+        and and size is 4;
+        and idx we getting 4. but 4 not present because index start from 0 1 2 3
+         so it will be wrong.
+
+
+     */
+    }
+
+
+    private Node getNodeAt(int idx) throws Exception{
+        if(size==0){
+            throw new Exception("LL is Empty!");
+        }
+        if(idx<0 || idx>=size){
+            throw new Exception("Invalid Index");
+        }
+        Node current_node = head;
+        for(int i=1; i<=idx; i++){
+            current_node=current_node.next;
+        }
+        return current_node;
+    /*
+    get at return the idx. and idx data.
+    but get Node at return the entire node .
+    idx 2 means return 30 40k
+
+    function should be private. because its returning node.
+    if we use public client get address of node.
+
+        // this only use linked list other function only. can't use in client class.
+     */
+    }
+
+    public static void main(String[] args) throws Exception {
         LinkedListImplementation list  = new LinkedListImplementation();
         list.addLast(10);
         list.addLast(20);
@@ -194,6 +289,11 @@ size = 1;
         System.out.println();
         list.addFirst(30);
         list.display();
+        System.out.println();
+        System.out.println(list.getFirst());
+        System.out.println(list.getLast());
+        System.out.println(list.getAt(1));
+        System.out.println(list.getNodeAt(2));  // this only can use linkedlist inside function.
     }
 }
 
