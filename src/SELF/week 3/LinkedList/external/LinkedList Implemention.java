@@ -26,20 +26,21 @@ temp.next.data=20.  // here we can check temp.next address what value is stored.
 **/
 public class LinkedListImplementation {
 
-    private class Node{     // private because client class not able to new it class.
+    private class Node {     // private because client class not able to new it class.
         int data;
         Node next;
     }
+
     private Node head;      // make private, because client class can't access or make it new and change it.
     private Node tail;
     private int size;
 
 
-    public void display(){
+    public void display() {
 
         Node current_node = head;
-        while(current_node!=null){
-            System.out.print(current_node.data+" -> ");
+        while (current_node != null) {
+            System.out.print(current_node.data + " -> ");
             current_node = current_node.next;
         }
         System.out.print("null");
@@ -63,23 +64,23 @@ Node temp = 1k
     }
 
     // add last.
-    public void addLast(int item){
+    public void addLast(int item) {
         // create a new node.
         Node newNode = new Node();   // creating empty new node.
         newNode.data = item;             // put data into newNode.
         newNode.next = null;              // pointing to next null of newNode.
 
         // attach.
-        if(size>=1){
+        if (size >= 1) {
             tail.next = newNode;
         }
         // summary object updation. this will update 2 way if size 0 or size 1 or >.
-        if(size==0){
+        if (size == 0) {
             // adding first time Node.
-            head =newNode;
+            head = newNode;
             tail = newNode;
             size++;
-        }else{          // if size not 0;
+        } else {          // if size not 0;
             tail = newNode;     // tail pointing to new node.
             size++;
         }
@@ -142,24 +143,24 @@ if we have 1 node then we do tail.next if do when size 0 then we do. null.next i
 
 
     // add first
-public void addFirst(int item){
+    public void addFirst(int item) {
         // create new node.
-    Node newNode = new Node();
-    newNode.data = item;
-    newNode.next = null;
+        Node newNode = new Node();
+        newNode.data = item;
+        newNode.next = null;
         // attach
-    if(size>=1){            // 10k point to head. then 20 point to head. then 30k point to head.
-        newNode.next = head;
-    }
+        if (size >= 1) {            // 10k point to head. then 20 point to head. then 30k point to head.
+            newNode.next = head;
+        }
         // summary object update.
-    if(size==0){
-        head=newNode;
-        tail = newNode;
-        size++;
-    }else{
-        head = newNode;
-        size++;
-    }
+        if (size == 0) {
+            head = newNode;
+            tail = newNode;
+            size++;
+        } else {
+            head = newNode;
+            size++;
+        }
 
     /*
 head =null
@@ -184,28 +185,27 @@ size = 1;
    tail =nn;
    size++;
     * */
-}
+    }
 
 
-
-// get first
-public int getFirst() throws Exception{
-        if(size==0){
+    // get first
+    public int getFirst() throws Exception {
+        if (size == 0) {
             throw new Exception("LL is empty!");
         }
         return head.data;
 
         /*
-        *  get the first element of node. if not then print ll is empty.
-        *  throw new exception use for throw the exception.
-        *  is become danger function.
-        * */
+         *  get the first element of node. if not then print ll is empty.
+         *  throw new exception use for throw the exception.
+         *  is become danger function.
+         * */
     }
 
 
     // getLast
-    public int getLast()throws Exception{
-        if(size==0){
+    public int getLast() throws Exception {
+        if (size == 0) {
             throw new Exception("LL is empty!");
         }
         return tail.data;
@@ -225,18 +225,18 @@ public int getFirst() throws Exception{
 
 
     // get At
-    public int getAt(int idx) throws Exception{
+    public int getAt(int idx) throws Exception {
 
-        if(size==0){
+        if (size == 0) {
             throw new Exception("LL is empty!");
         }
-        if(idx<0 || idx>= size){
-            throw  new Exception("Invalid Index");
+        if (idx < 0 || idx >= size) {
+            throw new Exception("Invalid Index");
         }
 
         Node current_node = head;
-        for(int i=1; i<=idx; i++){   // break loop when i reached equal to idx. and after that that idx point and we return it.
-            current_node= current_node.next;
+        for (int i = 1; i <= idx; i++) {   // break loop when i reached equal to idx. and after that that idx point and we return it.
+            current_node = current_node.next;
         }
         return current_node.data;   // pointing to that idx which i wanted. so return this.
 
@@ -257,16 +257,16 @@ public int getFirst() throws Exception{
     }
 
 
-    private Node getNodeAt(int idx) throws Exception{
-        if(size==0){
+    private Node getNodeAt(int idx) throws Exception {
+        if (size == 0) {
             throw new Exception("LL is Empty!");
         }
-        if(idx<0 || idx>=size){
+        if (idx < 0 || idx >= size) {
             throw new Exception("Invalid Index");
         }
         Node current_node = head;
-        for(int i=1; i<=idx; i++){
-            current_node=current_node.next;
+        for (int i = 1; i <= idx; i++) {
+            current_node = current_node.next;
         }
         return current_node;
     /*
@@ -282,22 +282,22 @@ public int getFirst() throws Exception{
     }
 
     // add node at idx.
-    public void addAt(int item, int idx)throws Exception{
+    public void addAt(int item, int idx) throws Exception {
 
-        if(idx<0 || idx>size) throw new Exception("Invalid Index");
-        if(idx==0){
+        if (idx < 0 || idx > size) throw new Exception("Invalid Index");
+        if (idx == 0) {
             addFirst(item);
-        }else if(idx==size){
+        } else if (idx == size) {
             addLast(item);
-        }else{
+        } else {
             // create new node.
             Node newNode = new Node();
             newNode.data = item;
-            newNode.next =null;
+            newNode.next = null;
 
             // attach.
-            Node previous_node = getNodeAt(idx-1);
-            Node next_node =   previous_node.next;   //getNodeAt(idx); // current index. OR previous_node.next
+            Node previous_node = getNodeAt(idx - 1);
+            Node next_node = previous_node.next;   //getNodeAt(idx); // current index. OR previous_node.next
 
             previous_node.next = newNode;
             newNode.next = next_node;
@@ -306,7 +306,7 @@ public int getFirst() throws Exception{
             size++;
 
         }
-    }
+
     /*
 
     // we use function getNode at. we get node. getNodeAt function return complete node.
@@ -346,6 +346,91 @@ public int getFirst() throws Exception{
    Tc worst case O(n); getNOdeAt function using loop.
 
      */
+    }
+
+    // remove first.
+    public int removeFirst() throws Exception {
+
+        if(size==0) throw new Exception("LL is empty!");
+
+        // store head. which will be going to remove.
+        int removed = this.head.data;
+        if(this.size==1){
+            this.head = null;
+            this.tail = null;
+            this.size = 0;
+        }else{
+            this.head = this.head.next;
+            this.size--;
+        }
+        return removed;
+
+    /*
+    remove first  return the value.
+  - -   Time complexity will be O(1);
+
+   head.next will become new head. then first will removed.
+   and we also need to return removed head.
+   so we capture this head.   int removed = head.data; ->10;
+   20k new head.
+   head = head.next 20k will become new head.
+
+   tail will not change. because we only removed first.
+
+   if we have only node we do removed first.
+   head pointing to 10k and tail also pointing to 10k because of one node.
+
+   in this size --; because we remove node.
+   if size ==1  then my head become null and tail become null.
+   size become =0;
+
+    exception if size is 0 and we do remove first then t should throw exception.
+
+     */
+
+}
+
+//      removed last. Tc O(n);
+    public int removeLast() throws Exception{
+
+         if(size==0){
+             throw new Exception("LL is empty!");
+         }
+         int removed = tail.data;  // captured.
+
+        // summary object updation.
+
+        if(size==1){
+            head=null;
+            tail =null;
+            size =0;
+        }else{
+            Node previous_node= getNodeAt(size-2);
+            tail = previous_node;  // now tail is previous node.
+            tail.next= null;       // and tail next now null. wo last node removed.
+            size--;
+        }
+        return removed;
+    /*
+     removed tail node.
+     so size will be  size--;
+     or we store  tail.data which are going to remove. we capture it. which we need to return.
+
+     head not change tail change.
+
+     we can do using getNodeAt(size-2);
+     size-1 means last node.
+     size -2 means second last node.
+     so getNodeAt return second last node.
+
+        if we have only one node.
+        10k
+        head pointing to  10k tail pointing to 10k size 1.
+        head =null tail = null size = 0;
+
+        TC will be O(n) because we doing getNodeAt and getNodeAt use loops for getting the node.
+     */
+    }
 
     public static void main(String[] args) throws Exception {
         LinkedListImplementation list  = new LinkedListImplementation();
@@ -362,6 +447,9 @@ public int getFirst() throws Exception{
         System.out.println(list.getNodeAt(2));  // this only can use linkedlist inside function.
         list.addAt(100,2);
         list.display();
+        System.out.println();
+        System.out.println(list.removeFirst());
+        System.out.println(list.removeLast());
     }
 
 }
