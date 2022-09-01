@@ -281,6 +281,72 @@ public int getFirst() throws Exception{
      */
     }
 
+    // add node at idx.
+    public void addAt(int item, int idx)throws Exception{
+
+        if(idx<0 || idx>size) throw new Exception("Invalid Index");
+        if(idx==0){
+            addFirst(item);
+        }else if(idx==size){
+            addLast(item);
+        }else{
+            // create new node.
+            Node newNode = new Node();
+            newNode.data = item;
+            newNode.next =null;
+
+            // attach.
+            Node previous_node = getNodeAt(idx-1);
+            Node next_node =   previous_node.next;   //getNodeAt(idx); // current index. OR previous_node.next
+
+            previous_node.next = newNode;
+            newNode.next = next_node;
+
+            // summary object update. // we inserting at middle so no head effect no tail effect.
+            size++;
+
+        }
+    }
+    /*
+
+    // we use function getNode at. we get node. getNodeAt function return complete node.
+
+    if  we want to insert at node 3.
+    then we get first node 2.
+    idx 3 want to insert.
+    so getNodeAt(idx-1); we get 2.
+
+    ex. setting the address.
+    nm1 = getNodeAt(idx-1); // idx 2 get.
+    nb1 = nm1.next ; we also get this using getNodeAt(idx); we don't do idx+1; only getNodeAt(idx) we do.
+    nm1.next = newNode;
+    newNode.next = np1;
+
+   insert 60d
+   nm1 = 2;  30d
+   np1(3) =  2.next  ;  40d
+   now we set. nm1(2).next = 60d;
+   60d.next = np1(3);
+
+   so first get previous index.
+   then get currentold index.
+   both address get. store in variable.
+   then first .next is new node.
+   new node next. is currentold node idx.
+
+
+   if size is 3. and indxing is 0 1 2
+   if user said put index 3. then means user want to add last.
+   we throw exception when index is greater then size. idx>size throw exception.
+   size equal means add last.
+   if idx < 0 throw exception.
+
+   if idx 0; then add first.
+
+   Tc worst case O(n); getNOdeAt function using loop.
+
+     */
+
     public static void main(String[] args) throws Exception {
         LinkedListImplementation list  = new LinkedListImplementation();
         list.addLast(10);
@@ -294,6 +360,9 @@ public int getFirst() throws Exception{
         System.out.println(list.getLast());
         System.out.println(list.getAt(1));
         System.out.println(list.getNodeAt(2));  // this only can use linkedlist inside function.
+        list.addAt(100,2);
+        list.display();
     }
+
 }
 
