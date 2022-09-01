@@ -504,7 +504,79 @@ size = 1;
     every time getNodeAt and reverse the data.
      */
     }
-    
+
+    // reverse linked list using pointer.  reverse the address. ->
+
+    public void reverseLLPointer() throws Exception{
+        Node previous_node = head;
+        Node current_node = previous_node.next;
+        while(current_node!=null){
+            // setting the pointer.
+            Node ahead = current_node.next;
+            current_node.next = previous_node;
+
+            // shifting. after above pointer set. previous become current. and current become ahead. like incrementing. ++;
+            previous_node = current_node;
+            current_node= ahead;
+        }
+
+        // swap head and tail pointer set.
+        Node temp_head = head;
+        head = tail;
+        tail = temp_head;
+
+        // tail pointer
+        tail.next = null;
+
+
+    /*
+
+     10 20k  20 30k  30 40k 40 50k 50 null.
+     =======================================
+      10k     20k     30k    40k    50k
+     reverse
+     10 null 20 10k 30 20k  40 30k  50 40k head.
+     ==========================================
+       10k     20k    30k    40k      50k
+
+       3 pointer we use.
+       previous current or ahead.
+       1st step.
+       current.next = prev.   20 ke next me 10k. linked cut 30k.
+
+       now moved 3 pointer.
+       current.next = prev.    30 ke next. = 20k.
+
+       ; now moved 3 pointer.
+
+       current.next = prev.   40. next 30k.
+
+       now moved forward 3 pointer.
+        ahead pointing to null.
+        current.prev    50 ke next 40k.
+
+        now moved 3 pointer.
+        now ahead null.next .next. move forward again.
+        and current also move forward and pointing to null.
+       current become null.
+       work until current not equal to null.
+
+       one thing  left.
+       still head pointing to . 10k  and  tail pointing to 50k.
+       we also reverse both.
+
+       we need to 50k starting head.
+       do swapping.
+       in which.  head point to tail. and tail point to head.
+
+    one more thing left. tail.next still pointing to 20k.
+    tail is 10k and 10k next 20k pointing.
+    or tail next always point to null.
+    so we have to do. tail.next = null. for tail point to null.
+
+     */
+    }
+
     public static void main(String[] args) throws Exception {
         LinkedListImplementation list  = new LinkedListImplementation();
         list.addLast(10);
@@ -531,6 +603,9 @@ size = 1;
         System.out.println();
         System.out.println(list.removeAt(2));
         list.reverseLLData();
+        list.display();
+        System.out.println();
+        list.reverseLLPointer();
         list.display();
     }
 
