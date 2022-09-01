@@ -351,15 +351,15 @@ size = 1;
     // remove first.
     public int removeFirst() throws Exception {
 
-        if(size==0) throw new Exception("LL is empty!");
+        if (size == 0) throw new Exception("LL is empty!");
 
         // store head. which will be going to remove.
         int removed = this.head.data;
-        if(this.size==1){
+        if (this.size == 1) {
             this.head = null;
             this.tail = null;
             this.size = 0;
-        }else{
+        } else {
             this.head = this.head.next;
             this.size--;
         }
@@ -388,26 +388,26 @@ size = 1;
 
      */
 
-}
+    }
 
-//      removed last. Tc O(n);
-    public int removeLast() throws Exception{
+    //      removed last. Tc O(n);
+    public int removeLast() throws Exception {
 
-         if(size==0){
-             throw new Exception("LL is empty!");
-         }
-         int removed = tail.data;  // captured.
+        if (size == 0) {
+            throw new Exception("LL is empty!");
+        }
+        int removed = tail.data;  // captured.
 
         // summary object updation.
 
-        if(size==1){
-            head=null;
-            tail =null;
-            size =0;
-        }else{
-            Node previous_node= getNodeAt(size-2);
+        if (size == 1) {
+            head = null;
+            tail = null;
+            size = 0;
+        } else {
+            Node previous_node = getNodeAt(size - 2);
             tail = previous_node;  // now tail is previous node.
-            tail.next= null;       // and tail next now null. wo last node removed.
+            tail.next = null;       // and tail next now null. wo last node removed.
             size--;
         }
         return removed;
@@ -432,6 +432,79 @@ size = 1;
      */
     }
 
+
+    // remove At TC O(n);
+    public int removeAt(int idx) throws Exception {
+        if (size == 0) {
+            throw new Exception("LL is empty!");
+        }
+        if (idx < 0 || idx >= size) {
+            throw new Exception("Invalid Index.");
+        }
+
+        if (idx == 0) {
+            return removeFirst();
+        } else if (idx == size - 1) {
+            return removeLast();
+        } else {
+            Node previous_node = getNodeAt(idx - 1);
+            Node current_node = previous_node.next;
+            Node next_node = current_node.next;
+
+            previous_node.next = next_node;
+            size--;
+            return current_node.data;
+        }
+
+    /*
+    idx =2;
+    10k 20k 30k 40k 50k  address
+    0 1 2 3 4 idx.
+    so we need 1 2 3
+    we need to remove idx 2.
+    we need previous node because idx 2 node next 40k linked to 20.
+
+    if idx<0 or idx>=size;
+    size 3.  idxing  0 1 2.   so idx 3 will be invalid idx.
+
+    size 0 ll is empty.
+
+    if idx 0 then removed first . and if idx is size-1 idx is 2. that means remove last.
+    ; so we do simple old written function call remove first and removelast.
+     */
+}
+
+        // reverse linked list reversing the data.
+    public void reverseLLData() throws Exception{
+        int left_pointer =0;
+        int right_pointer = size-1;
+        while(left_pointer<right_pointer){
+            Node left_node = getNodeAt(left_pointer);
+            Node right_node = getNodeAt(right_pointer);
+
+            // swap
+            int temp_node = left_node.data;
+            left_node.data = right_node.data;
+            right_node.data = temp_node;
+
+            // increment decrement.
+            left_pointer++;
+            right_pointer--;
+        }
+
+    /*
+  10 20k  20 30k  30 40k  40 50k  50 null.
+  reverse.
+  50 20k  40 30k  30 40k  20 50k 10 null.
+  - in which address not reversed. only data reversed.
+  - reversed the linked list by reversing the data.
+
+    getNodeAt 10k
+    getNodeAt 50k
+    every time getNodeAt and reverse the data.
+     */
+    }
+    
     public static void main(String[] args) throws Exception {
         LinkedListImplementation list  = new LinkedListImplementation();
         list.addLast(10);
@@ -450,6 +523,15 @@ size = 1;
         System.out.println();
         System.out.println(list.removeFirst());
         System.out.println(list.removeLast());
+
+        System.out.println();
+        list.addLast(101);
+        list.addLast(102);
+        list.display();
+        System.out.println();
+        System.out.println(list.removeAt(2));
+        list.reverseLLData();
+        list.display();
     }
 
 }
