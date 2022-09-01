@@ -47,7 +47,7 @@ public class LinkedListImplementation {
 
 /*  --  theory part to traverse linked list. print linked list. --
 
- this.head; because i intensionally want to this head. this.head means class head. i don't want parameter head.
+ this.head; because i intensially want to this head. this.head means class head. i don't want parameter head.
   if we do only head then its not create problem if only one head.
   if there are many head then it will create problem.
 
@@ -55,7 +55,7 @@ Node temp = 1k
      temp = head;
       temp = 1k.
       sout (temp.data); get temp data.
-      temp = temp.next is equal to when we do i++; in for loop. its similar to for loop. we just increment.
+      temp = temp.next is equal to when we do i++; in for loop. its similar to for loop. we just increament.
       2k = 1k.next.  2k = 2k.
      - creating the loop we do condition until head or temp pointing to null.
       - we use temp because we don't want to change our head.
@@ -140,10 +140,59 @@ if we have 1 node then we do tail.next if do when size 0 then we do. null.next i
 * */
     }
 
+
+    // add first
+public void addFirst(int item){
+        // create new node.
+    Node newNode = new Node();
+    newNode.data = item;
+    newNode.next = null;
+        // attach
+    if(size>=1){            // 10k point to head. then 20 point to head. then 30k point to head.
+        newNode.next = head;
+    }
+        // summary object update.
+    if(size==0){
+        head=newNode;
+        tail = newNode;
+        size++;
+    }else{
+        head = newNode;
+        size++;
+    }
+
+    /*
+head =null
+tail =null
+size = 0;
+
+if size 0
+head= 10k
+tail  = 10k
+size = 1;
+
+   attach ->  we just need to 20k next is 10k. like 20k next point to head.
+
+   - create new node.
+   - attach if(size>=1) newNode.next  = head;
+   - summary object update.
+   if(size>=1)
+   h=nn;   -> head point to newNode. but we don't update tail node. tail will be tail node. we just update head.
+   size++;
+   else size=0;
+   head =nn;
+   tail =nn;
+   size++;
+    * */
+}
+
     public static void main(String[] args) {
         LinkedListImplementation list  = new LinkedListImplementation();
         list.addLast(10);
         list.addLast(20);
+        list.display();
+        System.out.println();
+        list.addFirst(30);
         list.display();
     }
 }
