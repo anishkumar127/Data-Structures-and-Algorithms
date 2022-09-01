@@ -577,6 +577,51 @@ size = 1;
      */
     }
 
+
+    // get mid node
+ public int mid(){
+        Node slow = head;
+        Node fast = head;
+
+        while(fast.next!=null && fast.next.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        // exit the loop. and where slow are return data node data. OR node.
+        return slow.data;
+
+    /*
+    - getAt function return the value of particular index.
+    - getAt(size/2);  find out data.  5/2 = 2;  4/2 = 2;
+
+    2nd method.
+    find out mid node one traverse.
+    we don't need to depend on size.
+    we don't do using loop get size and do size/2;
+
+    we have to do only one traverse.
+
+    me and my friend speed.
+    my friend speed is twice.
+    when my friend is on the end. then i will be at middle.
+    we take 2 pointer. which one go one and 2nd go twice.
+
+   - odd length.
+    10 20 30 40 50.
+    fast.next ==null.
+    50 next is null. so where slow that will be our mid node. in case of odd length.
+
+   - even length.
+   10 20 30 40
+    slow 20  fast 30.   ->  right.
+    slow 30  fast null.  -> wrong.
+    in case slow should be 20.
+    so fast on 30. and fast.next.next == null. then we return it slow pointer.
+    - in case slow return 20.
+
+    * */
+     }
+     
     public static void main(String[] args) throws Exception {
         LinkedListImplementation list  = new LinkedListImplementation();
         list.addLast(10);
@@ -607,6 +652,12 @@ size = 1;
         System.out.println();
         list.reverseLLPointer();
         list.display();
+        System.out.println();
+        list.addLast(20);
+        list.display();
+        System.out.println();
+
+        System.out.println(list.mid());
     }
 
 }
