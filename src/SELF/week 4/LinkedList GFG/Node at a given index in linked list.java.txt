@@ -1,0 +1,36 @@
+
+/*node class of the linked list
+class Node
+{
+    int data;
+    Node next;
+    Node(int key)
+    {
+        data = key;
+        next = null;
+    }
+}
+*/
+class GfG
+{
+   
+    public static int getNth(Node node, int ind)
+    {
+       //Your code here
+      
+       Node current_node = node;
+       int idx=0;
+     for(int i=1; i<=ind; i++){
+         if(ind==i){
+            idx =current_node.data;
+         }
+         
+         current_node = current_node.next;
+     }
+     
+     return idx;
+    }
+}
+
+
+
