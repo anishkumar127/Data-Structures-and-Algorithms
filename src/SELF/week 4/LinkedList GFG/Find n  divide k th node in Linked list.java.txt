@@ -1,0 +1,85 @@
+
+/*
+class Node
+{
+    int data;
+    Node next;
+    
+    Node(int key)
+    {
+        data = key;
+        next = null;
+    }
+}
+*/
+
+class GfG
+{
+    public static int nknode(Node head, int k)
+    {
+       
+    //   float size = size(head);
+       float kth = size(head) / k;
+        while(kth>1){
+            head = head.next;
+            kth--;
+        }
+       return head.data;
+    }
+    private static float size(Node head){
+        float count_Size = 0;
+        Node current_node = head;
+        while(current_node !=null){
+              count_Size++;
+            current_node = current_node.next;
+        }
+        
+        return count_Size;
+    }
+}
+
+
+
+
+
+
+
+// my code  on odd cases.
+
+// my appraoch fail somewhere. wrong code.
+class GfG
+{
+    public static int nknode(Node head, int k)
+    {
+       // add your code here
+       int size = size(head);
+       int kth = (int) Math.ceil(size/k);
+      Node current_node = head;
+    //   for(int i=0; i<kth; i++){
+    //       current_node = current_node.next;
+    //   }
+    //   return current_node.data;
+    int i=0;
+    while(current_node!=null){
+        i++;
+        if(kth==i){
+            return current_node.data;
+        }
+        
+        current_node = current_node.next;
+    }
+    return -1;
+       
+    }
+    private static int size(Node head){
+        int count_Size = 0;
+        Node current_node = head;
+        while(current_node !=null){
+            count_Size++;
+            current_node = current_node.next;
+        }
+        
+        return count_Size;
+    }
+}
+
