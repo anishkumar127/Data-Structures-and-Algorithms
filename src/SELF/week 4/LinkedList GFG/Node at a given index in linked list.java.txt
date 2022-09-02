@@ -34,3 +34,38 @@ class GfG
 
 
 
+
+
+// comments
+
+class GfG
+{
+    public static int getNth(Node node, int ind)
+    {
+       int i = 0;
+       while(node != null) {
+           i++;
+           if(i == ind) return node.data;
+           node = node.next;
+       }
+       return -1;
+    }
+}
+
+//
+
+ int result = -1;
+       Node temp = node;
+       int len = 0;
+       
+       while(temp != null){
+           len++;
+           if(len == ind){
+               result = temp.data;
+               break;
+           }
+           temp = temp.next;
+       }
+       return result;
+       
+       
