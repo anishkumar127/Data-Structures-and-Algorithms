@@ -1,5 +1,5 @@
 import java.util.*;
-// TC  O(n)  SC O(1);
+// TC  O(n)  SC O(1); worst case O(logn)
 public class Main {
     public static void main(String[] args) {
       int arr[] = {1,2,3,4,5,6};
