@@ -18,6 +18,7 @@ public class Main {
         long sumOfFruites=0;
         for(int i=0; i<n; i++){
           if(arr[i]>marker){
+          // int accessFruits =  arr[i]-marker;
             sumOfFruites+=(arr[i]-marker);
           }
         }
