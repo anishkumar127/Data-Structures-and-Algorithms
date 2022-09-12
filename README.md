@@ -28,11 +28,7 @@
 <!-- YOUTUBE:END -->
 
 
-
-
-
-<div class='parent'>
-<style>.parent {
+ <style>.parent {
   /* border: 1px solid black; */
   margin: 1rem;
   padding: 2rem 2rem;
@@ -45,6 +41,9 @@
   vertical-align: middle;
 }
 </style>
+
+
+<div class='parent'>
 
 <div class='child'>
 
