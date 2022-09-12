@@ -28,7 +28,8 @@
 <!-- YOUTUBE:END -->
 
 
- <style>.parent {
+ <style>
+ .parent {
   /* border: 1px solid black; */
   margin: 1rem;
   padding: 2rem 2rem;
