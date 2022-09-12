@@ -27,16 +27,9 @@
 - [React Js - Skeleton Loading Screen with using API](https://www.youtube.com/watch?v=BSDYiA2l3IE)
 <!-- YOUTUBE:END -->
 
-We embed a `css` code chunk here.
 
-```{css, echo=FALSE}
-p {
-  font-size: 32px;
-}
-```
 
- <style>
- {css, echo=FALSE}
+ <!-- <style>
  .parent {
   /* border: 1px solid black; */
   margin: 1rem;
@@ -49,7 +42,7 @@ p {
   padding: 1rem 1rem;
   vertical-align: middle;
 }
-</style>
+</style> -->
 
 
 <div class='parent'>
