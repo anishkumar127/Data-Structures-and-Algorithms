@@ -20,6 +20,7 @@
 ## 🦋 Latest YouTube videos
 
 <!-- YOUTUBE:START -->
+- [Middle of the Linked List - leetcode and gfg](https://www.youtube.com/watch?v=n1e0Psnp5i0)
 - [Binary Search leetcode || GFG](https://www.youtube.com/watch?v=1OWGjk9OYx8)
 - [Sqrt&lpar;x&rpar; leetcode || Square root of a number GFG](https://www.youtube.com/watch?v=jCTWNB650Xg)
 <!-- YOUTUBE:END -->
