@@ -20,7 +20,6 @@
 ## 🦋 Latest YouTube videos
 
 <!-- YOUTUBE:START -->
-- [finding middle element in a linked list](https://www.youtube.com/watch?v=kcDXkyw0m9I)
 - [Binary Search leetcode || GFG](https://www.youtube.com/watch?v=1OWGjk9OYx8)
 - [Sqrt&lpar;x&rpar; leetcode || Square root of a number GFG](https://www.youtube.com/watch?v=jCTWNB650Xg)
 <!-- YOUTUBE:END -->
