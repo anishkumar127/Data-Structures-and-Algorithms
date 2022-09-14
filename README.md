@@ -21,11 +21,11 @@
 ## 🦋 Latest YouTube videos
 
 <!-- YOUTUBE:START -->
+- [Order Agnostic Binary Search](https://www.youtube.com/watch?v=KNRWJ6fhQg4)
 - [Delete Alternate Nodes - Leetcode #java #gfg](https://www.youtube.com/watch?v=stpMysBOZRg)
 - [Find First and Last Position of Element in Sorted Array - #leetcode  &amp; #gfg   #java](https://www.youtube.com/watch?v=Qx6emyzON34)
 - [Middle of the Linked List - Leetcode and GFG - Java](https://www.youtube.com/watch?v=n1e0Psnp5i0)
 - [Binary Search - Leetcode Solution - Java](https://www.youtube.com/watch?v=1OWGjk9OYx8)
-- [Sqrt&lpar;x&rpar; Leetcode | Square root of a number GFG - Java](https://www.youtube.com/watch?v=jCTWNB650Xg)
 <!-- YOUTUBE:END -->
 
 
