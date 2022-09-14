@@ -56,9 +56,26 @@
 
 ![LeetCode Stats](https://leetcard.jacoblin.cool/anishkumar127?theme=unicorn&font=Noto%20Sans&ext=activity?theme=light,unicorn&width=500&height=400&border=0&radius=20&animation=true&ext=activity&cache=0) </a>
 
+<!-- <a href="https://github.com/KnlnKS/leetcode-stats">
+  <img alt="LeetCode Stat Card" src="https://apu5rh8gxk.execute-api.us-east-1.amazonaws.com/default/leetcode-stats?username=anishkumar127" width="400"/>
+</a> -->
+
+<!-- <a href="https://leetcode.com/anishkumar127/"> 
+
+![LeetCode Stats](https://leetcard.jacoblin.cool/anishkumar127?theme=unicorn&font=Noto%20Sans&theme=dark&animation=true&ext=heatmap&cache=0) </a> -->
+
+<!-- <a href="https://github.com/KnlnKS/leetcode-stats">
+  <img alt="LeetCode Stat Card" src="https://apu5rh8gxk.execute-api.us-east-1.amazonaws.com/default/leetcode-stats?username=anishkumar127" width="400"/>
+</a> -->
 <!-- </div>
 
 <div class='child'> -->
+
+<!-- <h2 align="center">&#128200; Coding Stats</h2>
+<p align="center">
+<img src="https://leetcard.jacoblin.cool/anishkumar127?ext=contest&border=1&theme=dark"/></a>
+</p> -->
+
 
 ## Geeks For Geeks Stats 🦋
 
