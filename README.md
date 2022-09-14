@@ -14,7 +14,8 @@
 |---------|---------------|------------| -->
 <hr>
 
-# Complete DSA Click ➡️ [ ``Java`` ](https://github.com/anishkumar127/Data-Structures-and-Algorithms/tree/main/src/DSA%20Complete%20-%20Java) ⬅️
+## Weekly DSA ➡️ [ ``Java`` ](https://github.com/anishkumar127/Data-Structures-and-Algorithms/tree/main/src/SELF) ⬅️
+## Theory & Explanation DSA [`Theory`](https://github.com/anishkumar127/Data-Structures-and-Algorithms/tree/main/src/DSA%20Complete%20-%20Java)
  <hr>
 
 ## 🦋 Latest YouTube videos
