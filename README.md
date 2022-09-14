@@ -20,10 +20,10 @@
 ## 🦋 Latest YouTube videos
 
 <!-- YOUTUBE:START -->
-- [Find First and Last Position of Element in Sorted Array - leetcode &amp; gfg](https://www.youtube.com/watch?v=Qx6emyzON34)
-- [Middle of the Linked List - leetcode and gfg](https://www.youtube.com/watch?v=n1e0Psnp5i0)
-- [Binary Search leetcode || GFG](https://www.youtube.com/watch?v=1OWGjk9OYx8)
-- [Sqrt&lpar;x&rpar; leetcode || Square root of a number GFG](https://www.youtube.com/watch?v=jCTWNB650Xg)
+- [Find First and Last Position of Element in Sorted Array - #leetcode  &amp; #gfg   #java](https://www.youtube.com/watch?v=Qx6emyzON34)
+- [Middle of the Linked List - Leetcode and GFG - Java](https://www.youtube.com/watch?v=n1e0Psnp5i0)
+- [Binary Search - Leetcode Solution - Java](https://www.youtube.com/watch?v=1OWGjk9OYx8)
+- [Sqrt&lpar;x&rpar; Leetcode | Square root of a number GFG - Java](https://www.youtube.com/watch?v=jCTWNB650Xg)
 <!-- YOUTUBE:END -->
 
 
