@@ -63,6 +63,14 @@ class Solution {
                 return false;
             }
         }
+ 
+	 /* OR
+	for( char value:map.keySet()){
+	if(map.get(value)!=0){
+	return false
+	}
+	}
+	 */
         return true;
     }
 }
