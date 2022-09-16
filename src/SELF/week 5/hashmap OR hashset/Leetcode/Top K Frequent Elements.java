@@ -66,3 +66,31 @@ class Solution {
     }
 }
 ```
+
+
+
+class Solution {
+    public List<Integer> topKFrequent(int[] nums, int k) {
+        // Handle null data and edge cases
+        if (nums == null || nums.length == 0) return new ArrayList<>();
+        
+        // Using a map to keep track of count
+        Map<Integer, Integer> map = new HashMap<>();
+        // Using a list to only keep unique nums and to then sort them
+        List<Integer> list = new ArrayList<>();
+        
+        for (int num : nums) {
+            // Add count to map
+            map.put(num, map.getOrDefault(num, 0) + 1);
+            // Add only unique nums to list
+            if (!list.contains(num)) list.add(num);
+        }
+        
+        // Sort list by greatest count to least
+        Collections.sort(list, (Integer a, Integer b) -> map.get(b) - map.get(a));
+        
+        // Return a list containing only up to K elements
+        return list.subList(0, k);
+    }
+}
+
