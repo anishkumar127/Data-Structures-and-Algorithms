@@ -1,6 +1,11 @@
 // binary search can be possible.
 //but problem did on hashset.
 
+
+// we can also do like.
+/*
+put all element into set. and then check. but this will be 2 way hashset. O(n) + O(N); we are doing just single traversal.
+*/
 class Solution
 {
     public boolean findPair(int arr[], int size, int n)
