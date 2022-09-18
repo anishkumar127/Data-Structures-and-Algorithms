@@ -6,11 +6,13 @@ class Solution
         // code here
         HashMap<String,Integer> map = new HashMap<>();
         
+        // Get the frequency of word. 
         for(int i=0; i<n; i++){
             String word = arr[i];
             map.put(word,map.getOrDefault(word,0)+1);
         }
-        
+        // then find the max frequency 
+        // if found then put into answer.  and update the max frequency and also update the that word frequency to 0.
         String mostFrequent = "";
         int max_word =0; 
         for(int i=0; i<n; i++){
