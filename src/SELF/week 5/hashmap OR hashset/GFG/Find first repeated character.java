@@ -15,6 +15,112 @@ class Solution
     }
 }
 
+
+/// set hash set way.
+String firstRepChar(String s) 
+    { 
+        // code here
+        Set<Character> set = new HashSet<>();
+        
+        char[] ch=s.toCharArray();
+        
+        for(int i=0;i<ch.length;i++)
+        {
+            if(!set.contains(ch[i]))
+            {
+                set.add(ch[i]);
+            }
+            else
+            {
+               return Character.toString(ch[i]);
+            }
+        }
+        
+        return "-1";
+        
+    }
+    
+    
+    
+    
+    // old way 
+    
+    
+         // code here
+       HashMap<Character, Integer> map = new HashMap<> ();
+       for(int i = 0; i < s.length(); i++){
+           if(map.containsKey(s.charAt(i))){
+               map.put(s.charAt(i), map.get(s.charAt(i))+1);
+           } 
+           if(map.containsValue(2)){
+               String ans = "";
+               ans += s.charAt(i);
+               return ans;
+           }
+           else{
+               map.put(s.charAt(i), 1);
+           }
+       }
+       return "-1";
+       
+       
+       
+       
+       // string method using string contians method.
+       
+       class Solution 
+{ 
+    String firstRepChar(String s) 
+    { 
+        // code here
+        String str="";
+        for(int i=0; i<s.length(); i++)
+        {
+            if(str.contains(String.valueOf(s.charAt(i))))
+            {
+                str="";
+                str+=s.charAt(i);
+                return str;
+            }
+            else
+            {
+                str+=s.charAt(i);
+            }
+        }
+        
+        return "-1";
+    }
+} 
+
+frquency. 26 char.
+JAVA Solution without Hashmap
+
+       int[] a = new int[26];
+       for(int i=0; i<s.length(); i++)
+       {
+           char ch = s.charAt(i);
+           a[ch-'a']++;
+           if(a[ch-'a']>1) return ""+ch;
+       }
+       return "-1";
+       
+      
+      
+      // hashset 
+      
+       // code here
+        HashSet <Character>set=new HashSet<>();
+        for(int i=0;i<s.length();i++){
+            if(set.contains(s.charAt(i))){
+                return (""+s.charAt(i));
+            }
+            else{
+                set.add(s.charAt(i));
+            }
+        }
+          return "-1";
+          
+           
 Given a string S. The task is to find the first repeated character in it. We need to find the character that occurs more than once and whose index of second occurrence is smallest. S contains only lowercase letters.
 
  
