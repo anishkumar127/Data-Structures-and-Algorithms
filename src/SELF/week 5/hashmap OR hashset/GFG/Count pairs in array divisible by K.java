@@ -1,3 +1,6 @@
+Tc O(n);
+Sc O(k);  O(2K) = O(k);
+
 class Solution
 {
     public static long countKdivPairs(int arr[], int n, int k)
