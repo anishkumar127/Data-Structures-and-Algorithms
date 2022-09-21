@@ -1,0 +1,158 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Node{
+  int data;
+  Node next;
+  Node(int x)
+  {
+     data=x;
+     next=null;
+       }
+}
+class LinkedList
+  {
+    Node head;
+    void addNode(int data)   // insert At Tail rule
+    {
+      Node newNode = new Node(data);
+      if(head == null)
+      {   head = newNode; return;    }
+      Node current = head;
+      while(current.next !=null)
+        {
+          current = current.next;
+        }
+      current.next = newNode;
+    }
+}
+
+public class Main{
+  
+	public static void main (String[] args) throws java.lang.Exception	{
+		//your code here
+      Scanner sc =new Scanner(System.in);
+      int m= sc.nextInt();
+       int n= sc.nextInt();
+      LinkedList list1 = new LinkedList();          
+       for(int i=0;i<m;i++)    {
+        int   z= sc.nextInt();
+          list1.addNode(z);
+        }     
+        LinkedList list2 = new LinkedList();         
+       for(int i=0;i<n;i++)    {
+        int   p= sc.nextInt();
+          list2.addNode(p);
+        } 
+      
+       Node curr1 = list1.head;
+       Node curr2 = list2.head;     
+      if(m !=n){ System.out.print(0);}
+     else{
+     boolean flag = true;
+     for (int i=0;i<n;i++)
+       {
+           if (curr1.data != curr2.data)
+           {  
+             flag =false;
+             break;
+           }
+         curr1= curr1.next;
+         curr2 = curr2.next;
+       }
+     if(flag ==false) { System.out.print(0); }
+     else{ System.out.print(1);}
+   }
+      
+    }
+}
+
+
+
+
+
+
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class Main
+{ 
+        static Node head ;
+          static Node secoundhead ;
+	public static void main (String[] args) throws java.lang.Exception
+	{
+                Scanner input = new Scanner(System.in);
+                int n = input.nextInt();
+                int  m = input.nextInt();
+          
+                for(int i=0; i<n; i++){
+                        head =InsertAtLast(head,input.nextInt());
+                }      
+                     for(int i=0; i<m; i++){
+                        secoundhead =InsertAtLast(secoundhead,input.nextInt());
+                 }
+              System.out.println(CompairLinkList(head,secoundhead));
+                                 // printList(head);
+                
+	}
+        static Node InsertAtLast(Node head, int data){
+                Node newOne = new Node(data);
+                if(head==null){
+                        head = newOne;
+                        return head;
+                }
+                Node temp = head;
+                while(temp.next!=null){
+                        temp = temp.next;
+                }
+                temp.next=newOne;
+                return head;
+        }
+        static int CompairLinkList(Node head,Node secoundhead){
+                Node N1 = head;
+                Node N2 = secoundhead;
+            int result = 1;
+               
+                       
+                        while(N1!=null && N2!=null && N1.data==N2.data){
+                                N1= N1.next;
+                                N2 =N2.next;
+                        }
+                        if (N1 != null || N2 != null) {
+        // One of the lists has more items left in it. Otherwise, both lists are equal and fully traversed.
+                            result = 0;
+    
+                         
+                }
+                return result;
+              
+        }
+        static int SizeList(Node head){
+                Node temp = head;
+                int counter =0;
+                while(temp!=null){
+                        counter++;
+                        temp = temp.next;
+                }
+                return counter;
+        }
+          static Node printList(Node head){
+                Node temp = head;
+                while(temp!=null){
+                        System.out.print(temp.data+" ");
+                        temp = temp.next;
+                }
+                return head;
+        }
+}
+class Node {
+        int data;
+        Node next;
+        Node(int data){
+        this.data = data;
+        this.next = null;
+        }
+}
