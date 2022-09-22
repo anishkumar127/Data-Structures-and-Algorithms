@@ -23,12 +23,30 @@ public class Main {
         }
         return root;
     }
-  public static void preOrder(Node root){
+  public static void leverOrder(Node root){
         if(root==null) return;
-       System.out.print(root.data+" ");
-        preOrder(root.left);
-        preOrder(root.right);
-  }
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        // q.add(null); // its we will use for print level order. for next line printing. level by level. not single line.
+
+    while(!q.isEmpty()){
+        Node curr = q.remove();
+        if(curr==null){  
+            System.out.println();
+            if(q.isEmpty()){  
+                break;
+            }else{    
+                q.add(null);
+            }
+        }else{  
+            System.out.print(curr.data+" "); 
+           
+            if(curr.left!=null) q.add(curr.left);
+            if(curr.right!=null) q.add(curr.right);
+
+        }
+    }
+    }
     public static void main(String[] args) {
       Scanner sc = new Scanner(System.in);
        Node root = null;
@@ -42,13 +60,15 @@ public class Main {
       for(int i=0; i<n; i++){
         root = insert(root,arr[i]);
       }
-        preOrder(root);
+        leverOrder(root);
         System.out.println();
     }
 }
 
-TREE PREORDER TRAVERSAL
-You are given the number of nodes present in the tree. You have to input the nodes and form a Binary Search Tree (BST). After forming the BST, print the Preorder traversal of the BST.
+
+
+REE LEVEL ORDER TRAVERSAL
+You are given the number of nodes present in the tree. You have to input the nodes and form a Binary Search Tree (BST). After forming the BST, print the Level Order traversal of the BST.
 
 Input
 Line 1 contains integer n denoting number of nodes.
@@ -56,7 +76,7 @@ Line 1 contains integer n denoting number of nodes.
 Line 2 contains n spaced integers denoting node values.
 
 Output
-Print a single line of space separated integers denoting preorder traversal of tree.
+Print a single line of space separated integers denoting Level Order traversal of tree.
 
 Constraints
 1<=n<=500
@@ -68,7 +88,7 @@ Sample Input
 
 1 2 5 3 4 6
 Sample Output
-1 2 5 3 4 6
+1 2 5 3 6 4
 Explanation
 The BST is like :-
      1
@@ -80,3 +100,6 @@ The BST is like :-
        3    6
         \
          4
+We need to print the nodes level by level. We process each level from left to right.
+
+Level Order Traversal: 1 -> 2 -> 5 -> 3 -> 6 -> 4.
