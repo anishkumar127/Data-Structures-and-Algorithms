@@ -36,9 +36,9 @@ Output: false
 
 ## Solution
 
-Language: **Java**
+Language: **Java** 
 
-```java
+```java DFS
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -66,3 +66,27 @@ class Solution {
     }
 }
 ```
+BFS
+
+ */
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        TreeNode A = root.left ;
+        TreeNode B = root.right;
+        Stack<TreeNode> st = new Stack<>();
+        while(!st.isEmpty() || A!=null || B!=null){
+            while(A!=null && B!=null){
+                if(A.val!=B.val) return false;
+                st.push(A);
+                st.push(B);
+                A = A.left;
+                B= B.right;
+            }
+            if(A!=null || B!=null) return false;
+            B = st.pop().left;
+            A = st.pop().right;
+        }
+        return true;
+    }
+}
+
