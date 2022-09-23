@@ -90,3 +90,65 @@ class Solution {
     }
 }
 
+
+
+
+stack one stack.
+
+public boolean isSymmetric(TreeNode root) {
+  if (root == null) {
+    return true;
+  }
+  if (root.left == null && root.right == null) return true;
+  if (root.left == null || root.right == null) return false;
+  // children are not null
+  Stack<TreeNode> stack = new Stack<>();
+  stack.push(root.left);
+  stack.push(root.right);
+  
+  while (stack.size() > 0) {
+    TreeNode t1 = stack.pop();
+    TreeNode t2 = stack.pop();
+    // null check
+    if (t1 == null && t2 == null) continue;
+    if (t1 == null || t2 == null) return false;
+    // value check
+    if (t1.val != t2.val) return false;
+    // push children
+    stack.push(t1.right); stack.push(t2.left); // could be null
+    stack.push(t1.left); stack.push(t2.right);
+  }
+  
+  return true;
+}
+
+
+
+queue
+
+
+public boolean isSymmetric(TreeNode root) {
+  if (root == null) {
+    return true;
+  }
+  Queue<TreeNode> queue = new LinkedList<>();
+  queue.offer(root.left);
+  queue.offer(root.right);
+
+  while (queue.size() > 0) {
+    TreeNode t1 = queue.poll();
+    TreeNode t2 = queue.poll();
+    // check
+    if (t1 == null && t2 == null) continue;
+    if (t1 == null || t2 == null) return false;
+    if (t1.val != t2.val) return false;
+    // offer children
+    queue.offer(t1.left);
+    queue.offer(t2.right);
+
+    queue.offer(t1.right);
+    queue.offer(t2.left);
+  }
+  return true;
+}
+
