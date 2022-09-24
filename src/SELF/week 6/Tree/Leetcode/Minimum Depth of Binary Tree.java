@@ -72,3 +72,59 @@ class Solution {
     }
 }
 ```
+
+
+bfs
+
+public int minDepth2(TreeNode root) {
+    if (root == null) {
+        return 0;
+    }
+    Queue<TreeNode> queue = new LinkedList<>();
+    queue.offer(root);
+    int level = 1;
+    while (!queue.isEmpty()) {
+        int size = queue.size();
+        for (int i = 0; i < size; i++) {
+            TreeNode curNode = queue.poll();
+            if (curNode.left == null && curNode.right == null) {
+                return level;
+            }
+            if (curNode.left != null) {
+                queue.offer(curNode.left);
+            }
+            if (curNode.right != null) {
+                queue.offer(curNode.right);
+            }
+        }
+        level++;
+    }
+    return level;
+}
+
+
+
+public int minDepth(TreeNode root) {
+    if(root == null) return 0;
+    int depth = 1;
+    Queue<TreeNode> q = new LinkedList<TreeNode>();
+    q.offer(root);
+    while(!q.isEmpty()){
+        int size = q.size();
+        // for each level
+        for(int i=0;i<size;i++){
+            TreeNode node = q.poll();
+            if(node.left == null && node.right == null){
+                return depth;
+            }
+            if(node.left != null){
+                q.offer(node.left);
+            }
+            if(node.right != null){
+                q.offer(node.right);
+            }
+        }
+        depth++;
+    }
+    return depth;
+}
