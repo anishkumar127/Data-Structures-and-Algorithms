@@ -56,4 +56,69 @@ class Solution {
         return maxProfit;
     }
 }
+
 ```
+
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int profitSoFar = prices[0];
+        int maxProfit=0;
+        for(int i=0; i<prices.length; i++){
+            if(prices[i]<profitSoFar){
+                profitSoFar=prices[i];
+            }else if(prices[i]-profitSoFar>maxProfit){
+                maxProfit = prices[i]-profitSoFar;
+            }
+        }
+        return maxProfit;
+    }
+}
+
+
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int minSoFar = prices[0];
+        int maxProfit=0;
+        for(int i=0; i<prices.length; i++){
+            minSoFar = Math.min(prices[i],minSoFar);
+            int Profit = prices[i]-minSoFar;
+            maxProfit = Math.max(maxProfit,Profit);
+            
+        }
+        return maxProfit;
+    }
+}
+
+
+
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int minSoFar = prices[0];
+        int maxProfit=0;
+        for(int i=0; i<prices.length; i++){
+            minSoFar = Math.min(prices[i],minSoFar);
+            maxProfit = Math.max(maxProfit,prices[i]-minSoFar);
+            
+        }
+        return maxProfit;
+    }
+}
+
+
+// 1ms why?
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int profitSoFar = prices[0];
+        int maxProfit=0;
+        for(int i=0; i<prices.length; i++){
+            profitSoFar = Math.min(prices[i],profitSoFar);
+            maxProfit = Math.max(maxProfit,prices[i]-profitSoFar);
+            
+        }
+        return maxProfit;
+    }
+}
