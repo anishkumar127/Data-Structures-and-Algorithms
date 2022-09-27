@@ -86,3 +86,101 @@ class Solution {
     }
 }
 ```
+
+
+2nd approach
+
+
+
+class Solution {
+    public boolean isBalanced(TreeNode root) {
+        // If the tree is empty, we can say it’s balanced...
+        if (root == null)  return true;
+        // Height Function will return -1, when it’s an unbalanced tree...
+		if (Height(root) == -1)  return false;
+		return true;
+	}
+    // Create a function to return the “height” of a current subtree using recursion...
+	public int Height(TreeNode root) {
+        // Base case...
+		if (root == null)  return 0;
+        // Height of left subtree...
+		int leftHeight = Height(root.left);
+        // Height of height subtree...
+		int rightHight = Height(root.right);
+        // In case of left subtree or right subtree unbalanced, return -1...
+		if (leftHeight == -1 || rightHight == -1)  return -1;
+        // If their heights differ by more than ‘1’, return -1...
+        if (Math.abs(leftHeight - rightHight) > 1)  return -1;
+        // Otherwise, return the height of this subtree as max(leftHeight, rightHight) + 1...
+		return Math.max(leftHeight, rightHight) + 1;
+    }
+}
+
+
+
+
+
+    return Math.max(left, right) + 1;
+why here adeed one ?
+
+We assured that (root is not null) at beginning of getHeight(root).
+Therefore, we can assume that the height is at least one.
+
+In other words, the + 1 represents the height of the node itself.
+
+
+
+
+
+other way.
+
+
+
+class Solution {
+    public boolean isBalanced(TreeNode root) {
+       if(root==null) return true;   
+        if(height(root)==-1){
+            return false;
+        }
+        return true;
+        
+        // return height(root)!=-1;
+    }
+    int height(TreeNode root){
+        if(root==null)return 0;
+        int l = height(root.left);
+        int r = height(root.right);
+        if(l==-1 || r==-1 || Math.abs(l-r)>1) return -1;
+        
+        return Math.max(l,r)+1;
+    }
+}
+
+
+
+
+note static is not valid.
+so should be public or private. don't  know why pubic not fail but static fail.
+
+class Solution {
+    private boolean ans = true;
+    public boolean isBalanced(TreeNode root) {
+       if(root==null) return true;
+       height(root);
+       return ans;
+    }
+    int height(TreeNode root){
+        
+        if(root==null) return 0;
+        
+        int l = height(root.left);
+        int r = height(root.right);
+        
+        if(Math.abs(l-r)>1) ans = false;
+        
+        return 1+ Math.max(l,r);
+    }
+}
+
+
