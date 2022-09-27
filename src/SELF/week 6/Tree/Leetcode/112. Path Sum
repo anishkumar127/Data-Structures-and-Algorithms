@@ -1,0 +1,207 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+       if(root==null) return false;
+        if(root.left ==null && root.right==null && targetSum-root.val==0){
+            return true;
+        }
+        return hasPathSum(root.left, targetSum-root.val) || hasPathSum(root.right,targetSum-root.val);
+    }
+}
+
+/ so above what we are doing. ?
+/*
+leap node is which has no child.
+like left child and right child both null.
+so. if we do path summ like root to leaf.
+and we found sum equal to target sum then return it true else false.
+and there are may path to root to leaf node. 
+so we have do check every possible way. 
+if(root null then we can say that its false. because no sum equal to target.
+
+if( we check leaf node if any node left null and right null that is leaf and sum is target sum.
+so we can perform downward move. like substracting. from targeting. if equal to 0 return it true.
+and one more  while traversing left to right any side of tree like any subtree is eqal to target return it. no need to check both side. so we use OR || operator any true return true else both false return false.
+
+*/
+
+
+2nd approach
+
+class Solution {
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+       if(root==null) return false;
+        if(root.left ==null && root.right==null && root.val==targetSum){
+            return true;
+        }
+        return hasPathSum(root.left, targetSum-root.val) || hasPathSum(root.right,targetSum-root.val);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+stack iterative.
+public boolean hasPathSum(TreeNode root, int sum) {
+	Stack<TreeNode> stack = new Stack<>();
+	while (!stack.isEmpty() || root != null) {
+		while (root != null) {
+			stack.push(root);
+			sum -= root.val;
+			root = root.left;
+		}
+		
+		if (sum == 0 && stack.peek().right == null && stack.peek().left == null) {
+			return true;
+		} 
+		
+		//root == null
+		//pop all nodes whose children pathes have been both checked.
+		while (!stack.isEmpty() && stack.peek().right == root) {
+		    root = stack.pop();
+		    sum += root.val;
+		}
+		root = stack.isEmpty() ? null : stack.peek().right;
+		//root is now the first node in in-order which has never been pushed in the stack.
+	}
+	return false;
+}
+
+
+
+
+
+
+
+
+
+
+multiple way 
+1 st Approach 
+class Solution
+{
+    public boolean hasPathSum(TreeNode root, int targetSum)//we always try to approach the zero ----0++++ from any half left or right, like taking limit//if zero found at leaf then true else false
+    {
+        if(root == null)
+            return false;//base case when the selected path is not the desired path //we return false and check in next half of the subtree//base case for terminnation of the recursion 
+        else if(root.left == null && root.right == null && targetSum - root.val == 0)//we have faith in tree that it can find the node if present where the value nutralizes each other at 0
+            return true;//only the case when we are returning true 
+        else
+            return hasPathSum(root.left,targetSum - root.val)||hasPathSum(root.right,targetSum - root.val);//if present in left is good otherwiswe we are searching in right subtree recursively //all permutation in ways are done by recursion and not our tension 
+    }
+}//Please do Upvote, It helps a lot
+2 nd Approach 
+
+class Solution 
+{
+    private boolean flag= false;//we are taking the base case as false, if the sum is not found and if the target sum lies in the path from root to leaf, we make the flag true  
+    
+    public boolean hasPathSum(TreeNode root, int targetSum) 
+    {
+        int sum = 0;//calculate the downward sum 
+        
+        Helper(root, sum, targetSum);//it helps us calculate  the sum of each node for each path from root to leaf and tells us that our desired sum is present or not, by adding the node at that path 
+        
+        return flag;//returns true if sum is present else false is returned 
+    }
+    public TreeNode  Helper(TreeNode root, int sum, int targetSum)
+    {//postorder traversal + semi preorder traversal(accesing root beforehand once), we want to know about child first and then the parent 
+        if(root == null)//base case when we hit the null node, to tell the parent no node is present we return null 
+            return null;
+        //ROOT
+        sum= sum + root.val;//adding the node value to sum at each level//accesing root beforehand once
+        
+        TreeNode left= Helper(root.left, sum, targetSum);//recursing down the left subtree and knowing about the left child//storring the reference to detect it is leaf or not, if it is leaf then left == null//LEFT
+        TreeNode right= Helper(root.right, sum, targetSum);//recursing down the right subtree and knowing about the right child//storring the reference to detect it is leaf or not, if it is leaf then right == null//RIGHT
+        
+        //ROOT
+        if(sum == targetSum && left == null && right == null) //if we reached to our desired sum and the parent node is a leaf node, we got our path finally 
+            flag= true;//we make the flag to true as the desired path from root to leaf is achived 
+        
+        return root;//returning root, to tell the parent that I am present 
+    }
+}
+3 rd Approach 
+class Solution {
+    //0 -- null node, 1 means node, 2 found path node //metadata about the current status of the node 
+     public int PathSum(TreeNode root, int curr, int targetSum){
+         if ( root == null){
+            return 0;//we return 0 to tell that i am leaf 
+        }
+         curr+= root.val;//preorder sum
+         
+         int left= PathSum(root.left, curr, targetSum);
+         
+         if ( left == 2 )
+             return 2;//if left path conatins the desired path to leaf node with target sum, we no need to go to right part reccursively
+         
+        int right= PathSum(root.right, curr, targetSum);
+         
+        if ( right == 2)
+             return 2;//if right path conatins the desired path to leaf node with target sum, we no need to check further condition we just return 2 in order to indicate desired path has been found
+         
+         //Backtracking postorder traversal 
+         
+        if ( left == 0 && right == 0 && targetSum == curr){//if we reach to leaf node with desired sum we return 2, inorder to indicate we have found the path 
+             return 2;
+        }
+        
+        return 1;//we return 1, to tell that we have not found the desired path till now  
+     }
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        if ( root == null){
+            return false;//empty graph, no path tp find we return false 
+        }
+        
+        if ( PathSum(root, 0, targetSum) == 2)//found path case 
+            return true;
+        else
+            return false;//not path found case 
+    }
+}
+
+
