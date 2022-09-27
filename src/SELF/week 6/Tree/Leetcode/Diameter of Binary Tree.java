@@ -74,3 +74,52 @@ class Solution {
 }
 ```
 
+
+
+without return -1;  no need l+r+2 .  simply l+r;
+
+class Solution {
+    private int ans[] = new int [1];
+    public int diameterOfBinaryTree(TreeNode root) {
+        if(root==null) return 0;
+        height(root);
+        return ans[0];
+    }
+    int height(TreeNode root){
+        if(root==null) return 0;
+        int l = height(root.left);
+        int r = height(root.right);
+        int d = l+r; // 2 is edge which we missed.
+        ans[0] = Math.max(d,ans[0]);
+        return  1+ Math.max(l,r);
+    }
+}
+
+
+
+
+
+
+
+// just so simple.
+
+class Solution {
+    private int ans =0 ;
+    public int diameterOfBinaryTree(TreeNode root) {
+        if(root==null) return 0;
+        height(root);
+        return ans;
+    }
+    int height(TreeNode root){
+        
+        if(root==null) return 0;
+       
+        int l = height(root.left);
+        int r = height(root.right);
+        
+        ans = Math.max(ans , l + r);
+        
+        return  1+ Math.max(l,r);
+    }
+}
+
