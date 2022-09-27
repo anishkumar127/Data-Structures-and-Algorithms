@@ -1,0 +1,40 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+       if(root==null) return false;
+        if(root.left ==null && root.right==null && targetSum-root.val==0){
+            return true;
+        }
+        return hasPathSum(root.left, targetSum-root.val) || hasPathSum(root.right,targetSum-root.val);
+    }
+}
+
+/ so above what we are doing. ?
+/*
+leap node is which has no child.
+like left child and right child both null.
+so. if we do path summ like root to leaf.
+and we found sum equal to target sum then return it true else false.
+and there are may path to root to leaf node. 
+so we have do check every possible way. 
+if(root null then we can say that its false. because no sum equal to target.
+
+if( we check leaf node if any node left null and right null that is leaf and sum is target sum.
+so we can perform downward move. like substracting. from targeting. if equal to 0 return it true.
+and one more  while traversing left to right any side of tree like any subtree is eqal to target return it. no need to check both side. so we use OR || operator any true return true else both false return false.
+
+*/
