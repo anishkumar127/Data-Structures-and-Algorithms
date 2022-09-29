@@ -73,7 +73,7 @@ class Solution {
 
 
 
-optimal.
+optimal. tc O(1) sc O(1);
 
 class Solution {
     public boolean isPowerOfTwo(int n) {
