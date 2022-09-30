@@ -69,3 +69,38 @@ public class Main {
       // System.out.println(map);
   }
 }
+
+
+
+optimal 
+
+
+class Solution{
+    
+   
+    // Function for finding maximum and value pair
+    public static int lenOfLongSubarr (int A[], int N, int K) {
+      int sum =0;
+      int ans =0;
+      HashMap<Integer,Integer> map = new HashMap<>();
+    // >  map.put(0,1);
+      for(int i=0; i<N; i++){
+           sum+=A[i];
+          
+          int len = sum-K;
+        if(sum==K) ans = i+1;   // if somewhere sum ==k then do i+1;
+        
+        // get the sum-k and compare with max. if max then put into ans;
+          if(map.containsKey(len)){
+             ans = Math.max(ans, i-map.get(len));
+          }
+          // if sum not present then we have to put sum into map. and that map index.
+          if(!map.containsKey(sum)){
+              map.put(sum,i);
+          }
+      }
+      return ans;
+    }
+    
+    
+}
