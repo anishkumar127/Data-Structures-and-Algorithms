@@ -38,6 +38,7 @@ Constraints:
 ``brute force.  Tc O(n^2); sc O(1);``
 
 ```
+
 class Solution {
     int getPairsCount(int[] arr, int n, int k) {
        int count =0;
@@ -51,10 +52,48 @@ class Solution {
        return count;
     }
 }
-
 ```
 
+``brute force``
 
+```
+ int add = 0;
+
+        for(int i =0;i<n;i++){
+
+            int j = i+1;
+
+            if((arr[i]+arr[j])==k){
+
+                 add ++;
+
+            }
+
+        }
+
+        return add;//with o(n^2) complexity
+        
+        
+ ```       
+        
+``optimal Tc O(n) Sc O(n); hashmap``
+
+```
+class Solution {
+    int getPairsCount(int[] arr, int n, int k) {
+        
+       HashMap<Integer,Integer> map = new HashMap<>();
+       int count=0;
+       for(int num:arr){
+           if(map.containsKey(k-num)){
+              count +=map.get(k-num);  // adding frequency
+          }
+           map.put(num,map.getOrDefault(num,0)+1);
+       }
+       return count;
+    }
+}
+```
 
 
 
