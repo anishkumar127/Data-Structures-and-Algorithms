@@ -71,7 +71,7 @@ public class Main {
 
 ``optimal   Tc O(n) sc O(1);``
 
-```
+```Java
 import java.util.*;
 
 public class Main {
@@ -123,7 +123,7 @@ class Solution{
 
 ``comments``
 
-```
+```java
 class Solution{
     static long maximumSumSubarray(int K, ArrayList<Integer> Arr,int N){
        long sum = 0;
