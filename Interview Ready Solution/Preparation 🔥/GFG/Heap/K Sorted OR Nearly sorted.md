@@ -43,6 +43,7 @@ Arrays.sort(arr);
 ``  optimal solution Priority Queue``
 
 ```Java
+
 class Solution
 {
    
