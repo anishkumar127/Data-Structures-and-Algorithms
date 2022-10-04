@@ -51,6 +51,7 @@ Constraints:
 
 
 ```java
+
 class Solution { 
     public static long sumBetweenTwoKth(long arr[], long N, long K1, long K2)
     {
@@ -82,3 +83,27 @@ class Solution {
 }
 
 ```
+
+
+
+
+`` brute force``
+
+```java
+class Solution { 
+    public static long sumBetweenTwoKth(long A[], long N, long K1, long K2)
+    {
+        // Your code goes here
+        Arrays.sort(A);
+        long res = 0;
+        for(int i = (int) K1; i < K2 - 1; ++i) {
+            res += A[i];
+        }
+        return res;
+    }
+}
+
+```
+
+
+
