@@ -18,6 +18,45 @@ class Sol
 }
 
 
+
+
+// binary search
+
+
+class Sol
+{
+    public static int matSearch(int mat[][], int N, int M, int X)
+    {
+        
+       for(int[] arr : mat){
+           if(search(arr,X)==true){
+               return 1;
+           }
+       }
+        return 0;
+    }
+    private static boolean search(int [] mat , int X){
+         int s =0;
+        int e = mat.length;
+        
+        while(s<e){
+            int mid = s+(e-s)/2;
+            
+            if(mat[mid]==X){
+                return true;
+            }else if (mat[mid]>X){
+                e = mid;
+            }else{
+                s = mid+1;
+            }
+        }
+        return false;
+    }
+}
+
+
+
+
 Given a matrix mat[][] of size N x M, where every row and column is sorted in increasing order, and a number X is given. The task is to find whether element X is present in the matrix or not.
 
 
