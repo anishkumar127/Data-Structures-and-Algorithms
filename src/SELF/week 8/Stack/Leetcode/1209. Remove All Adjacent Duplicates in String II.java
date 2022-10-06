@@ -32,3 +32,42 @@ class Solution {
         return sb.reverse().toString();
     }
 }
+
+
+
+// optimal
+
+class Solution {
+    public String removeDuplicates(String s, int k) {
+        
+        // Pair Class =>  Character Frequency    ex. char d , int freq 1.   ->  d,1
+        Stack<int[]> main = new Stack<>();  // pair class. using array.
+        
+        for(char ch:s.toCharArray()){
+           
+            // check main stack peek character equal to current character. then increase that char frequencuy.
+            if(!main.isEmpty() && main.peek()[0]==ch){
+                main.peek()[1]++;
+                
+                // otherwise push char and freq 1.
+            }else{
+                main.push(new int[] {ch,1});
+            }
+            
+            // if any char frequency equal to k then pop that char.
+            if(main.peek()[1]==k){
+                main.pop();
+            }
+        }
+        // store main stack value into string builder.
+        StringBuilder sb = new StringBuilder();
+        while(!main.isEmpty()){
+           int[] top = main.pop();
+            
+            while(top[1]-->0){
+                sb.append((char)top[0]);
+            }
+        }
+        return sb.reverse().toString();
+    }
+}
