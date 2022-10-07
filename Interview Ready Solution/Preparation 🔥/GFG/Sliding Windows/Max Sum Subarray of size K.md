@@ -177,3 +177,42 @@ class Solution{
 }
 
 ```
+
+
+
+``Scanner input``
+
+```java
+
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String args[]) {
+      Scanner sc  = new Scanner(System.in);
+       int n = sc.nextInt();
+      int [] arr= new int [n];
+        int k = sc.nextInt();
+      for(int i=0; i<n; i++){
+        arr[i] = sc.nextInt();
+      }
+     int s = 0;
+     int e = 0;
+     long sum =0;
+     long max = Integer.MIN_VALUE;
+     while(e<n){
+       sum+=arr[e];
+       if(e-s+1<k){
+         e++;
+       }else if(e-s+1==k){
+         max = Math.max(max,sum);
+         sum = sum-arr[s];
+         s++;
+         e++;
+       }
+     }
+        System.out.println(max);
+    }
+}
+```
+
