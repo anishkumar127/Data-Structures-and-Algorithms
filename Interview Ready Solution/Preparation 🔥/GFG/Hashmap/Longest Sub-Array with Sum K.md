@@ -139,3 +139,29 @@ class Solution{
     
 }
 ```
+
+`` this is for revision time``
+
+```java
+class Solution{
+    
+    // Function for finding maximum and value pair
+    public static int lenOfLongSubarr (int arr[], int n, int k) {
+        
+        HashMap<Integer,Integer> map = new HashMap<>();
+        int sum =0;
+        int max =0;
+        map.put(0,1);
+        for(int i=0; i<n; i++){
+            sum+=arr[i];
+            if(sum==k) max=i+1;
+            if(map.containsKey(sum-k)){
+                max = Math.max(max,i-map.get(sum-k));
+            }
+            map.putIfAbsent(sum,i);
+        }
+     return max;
+    }
+}
+
+```
