@@ -63,6 +63,47 @@ class Solution
 
 ```
 
+
+** optimal solution using XOR**
+*Tc  = O(n) + O(N)  = O(N)  and Sc O(1)*
+```java
+class Solution
+{
+    public int[] singleNumber(int[] nums)
+    {
+      
+      int xor =0;
+     
+     for(int val :nums){
+         xor = xor^ val;
+     }
+     
+     int RightMostSetBitMask = xor & -xor;  // a & a+1;  OR a & -a;
+     
+     int a =0;
+     int b = 0;
+     for(int val :nums){
+         if((val & RightMostSetBitMask) ==0){
+             a = a^val;
+         }else{
+             b = b^ val;
+         }
+     }
+      
+      if(a<b){
+          return new int [] {a,b};
+      }else{
+          return new int [] {b,a};
+      }
+      
+    }
+}
+
+```
+
+
+
+
 Given an array A containing 2*N+2 positive numbers, out of which 2*N numbers exist in pairs whereas the other two number occur exactly once and are distinct. Find the other two numbers. Return in increasing order.
 
 
