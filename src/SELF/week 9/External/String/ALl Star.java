@@ -24,6 +24,34 @@ Output
 h*e*l*l*o
 
 */
+// sweetly handle 
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str=sc.nextLine();
+        sc.close();
+        Solution ob = new Solution();
+        String ans=ob.allStar(str);
+        System.out.println(ans);
+    }
+}
+class Solution{
+    public String allStar(String str) {
+      String ans = "";
+            for(int i=0; i<str.length(); i++){
+                    if(i==0){
+                            ans+=str.charAt(i);
+                    }else{
+                             ans+="*"+str.charAt(i);
+                    }
+                   
+                    
+            }
+            return ans;
+    }
+}
 
 
 
