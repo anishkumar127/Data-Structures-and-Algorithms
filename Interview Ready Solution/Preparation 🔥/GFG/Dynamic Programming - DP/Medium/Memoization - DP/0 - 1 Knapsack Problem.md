@@ -1,3 +1,4 @@
+```java
 //{ Driver Code Starts
 import java.util.*;
 import java.io.*;
@@ -71,8 +72,9 @@ class Solution
 }
     }
 }
+```
 
-
+```java
 class Solution 
 { 
     //Function to return max value that can be put in knapsack of capacity W.
@@ -151,6 +153,7 @@ class Solution
     
     */
 }
+```
 
 ```text
   /*
