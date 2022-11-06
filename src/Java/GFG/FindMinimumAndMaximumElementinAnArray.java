@@ -1,84 +1,54 @@
+import java.util.TreeSet;
 
+class Compute {
+	// using tree data structure.
+	// O(NlogN)
+	static pair getMinMax1(long a[], long n) {
 
-                            // using tree data structure.
-class Compute 
-{
-    static pair getMinMax(long a[], long n)  
-    {
-    
-        TreeSet<Long> tree = new TreeSet<>();
-        for(long  arr : a){
-            tree.add(arr);
-        }
-        
-        return new pair (tree.first(), tree.last());
-    }
+		TreeSet<Long> tree = new TreeSet<>();
+		for (long arr : a) {
+			tree.add(arr);
+		}
+
+		return new pair(tree.first(), tree.last());
+	}
+
+	// using one loop and min max.
+	// O(N)
+	static pair getMinMax(long a[], long n) {
+		if (n == 0)
+			throw new RuntimeException("Can't find min and max for array of length 0.");
+		// Write your code here
+		long max = a[0], min = a[0];
+
+		for (int i = 0; i < a.length; i++) {
+			if (a[i] > max) {
+				max = a[i];
+			}
+			if (a[i] < min) {
+				min = a[i];
+			}
+		}
+		return new pair(min, max);
+	}
 }
 
+class pair {
+	long min, max;
 
-
-                    // using one loop and min max.
-
-
-class Compute 
-{
-    static pair getMinMax(long a[], long n)  
-    {
-        //Write your code here
-        long max = Integer.MIN_VALUE;
-        long min = Integer.MAX_VALUE;
-        
-        for(int i =0; i<a.length; i++){
-            if(a[i]>max){
-                max = a[i];
-            }
-            if(a[i]<min){
-                min = a[i];
-            }
-        }
-        return new pair(min,max);
-    }
+	pair(Long long1, Long long2) {
+		min = long1;
+		max = long2;
+	}
 }
-
-
-
-                            // 3
-
-
-      int n = arr.length;
-      int j =n-1;
-      int min = arr[0];
-      int max = arr[0];
-      while(j>0){
-        if(arr[j]>max){
-          max=arr[j];
-        }
-        if(arr[j]<min){
-          min=arr[j];
-        }
-        j--;
-      }
-      System.out.print(min+" "+max);
-
-
-                                //4
-
 
 public class Main {
-    public static void main(String[] args) {
-     
-      int n = arr.length;
-          int ans = 0;
-          int i = 0;
-          int j = n-1;
-          while(i<j){
-              if(arr[j]>arr[i]){
-                 j--;
-              }else{
-                  i++;
-              }
-         }
-             ans = arr[i];
-            System.out.print(ans);
-    }
+	public static void main(String[] args) {
+
+		long a[] = { 1, 7, -1, 6, 9, -100 };
+
+		pair pair = Compute.getMinMax(a, a.length);
+
+		System.out.printf("Min: %d and Max: %d.\n", pair.min, pair.max);
+	}
 }
