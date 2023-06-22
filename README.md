@@ -21,11 +21,11 @@
 ## 🦋 Latest YouTube videos
 
 <!-- YOUTUBE:START -->
+- [ideation Live Stream](https://www.youtube.com/watch?v=zupApfOCIdI)
 - [Fee Pay - Fee Details](https://www.youtube.com/watch?v=TjdEWf6nz0c)
 - [Utility - Notepad , Calculator](https://www.youtube.com/watch?v=d3iXqcQu_zg)
 - [About](https://www.youtube.com/watch?v=3YhqfJ1xJck)
 - [Leave Details](https://www.youtube.com/watch?v=gQZOqzud-GE)
-- [Update Details](https://www.youtube.com/watch?v=M84-Mghgrpg)
 <!-- YOUTUBE:END -->
 
 
